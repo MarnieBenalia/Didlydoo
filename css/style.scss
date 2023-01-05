@@ -1,0 +1,13 @@
+@import './scss/_mixins';
+// pour importer un élément: @include absolute-el()
+@import './scss/_placeholders'; 
+// pour importer un élément: @extend %lenomdetonplaceholder
+@import './scss/_variables';
+// pour importer un élément: $exemplecouleur
+
+body{
+    background-image: url(Images/fond.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
