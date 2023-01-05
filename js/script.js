@@ -10,7 +10,6 @@ async function displayEvents() {
     let events = await getEvents();
     for (let event of events) {
         const section = document.createElement("section");
-        const article = document.createElement("article");
         console.log(event)
 
         const title = document.createElement("h2");
@@ -24,30 +23,46 @@ async function displayEvents() {
         nameInput.setAttribute("type", "text");
         section.appendChild(nameInput);
 
+        const divDate = document.createElement("div");
+        divDate.className = "div-date";
+        const divCheckbox = document.createElement("div");
+        const divTitle = document.createElement("h3");
+        divTitle.innerText = "Name/Date";
+        divDate.appendChild(divTitle);
+        divCheckbox.className = "div-checkbox";
+
         for (let date of event.dates) {
             const dateDisplayed = document.createElement("h3");
             dateDisplayed.innerText = date.date;
-            article.appendChild(dateDisplayed);
+            divDate.appendChild(dateDisplayed);
 
             const dateAgree = document.createElement("input");
             dateAgree.setAttribute("type", "checkbox");
-            dateAgree.setAttribute("name", "agree");
+            dateAgree.setAttribute("id", "agree");
             const labelAgree = document.createElement("label");
             labelAgree.setAttribute("for", "agree");
-            article.appendChild(dateAgree);
+            labelAgree.innerText = "Agree"
+            divCheckbox.appendChild(dateAgree);
+            divCheckbox.appendChild(labelAgree);
 
             const dateDisagree = document.createElement("input");
             dateDisagree.setAttribute("type", "checkbox");
-            dateDisagree.setAttribute("name", "disagree");
+            dateDisagree.setAttribute("id", "disagree");
             const labelDisagree = document.createElement("label");
             labelDisagree.setAttribute("for", "disagree");
-            article.appendChild(dateDisagree);
+            labelDisagree.innerText = "Disagree";
+            divCheckbox.appendChild(dateDisagree);
+            divCheckbox.appendChild(labelDisagree);
+
+            section.appendChild(divDate);
+            section.appendChild(divCheckbox);
 
             for (let attendee of date.attendees) {
                 const attendeeName = document.createElement("h3");
-                const div = document.createElement("div");
+                const divByName = document.createElement("div");
+                divByName.className = "div-name";
                 attendeeName.innerText = attendee.name;
-                div.appendChild(attendeeName);
+                divByName.appendChild(attendeeName);
 
                 const availability = document.createElement("h3");
                 if (attendee.available === true) {
@@ -55,13 +70,11 @@ async function displayEvents() {
                 } else {
                     availability.innerText = "x";
                 }
-                div.appendChild(availability);
+                divByName.appendChild(availability);
 
-                article.appendChild(div);
+                section.appendChild(divByName);
             }
         }
-
-        section.appendChild(article);
         const author = document.createElement("h4")
         author.innerText = `Event created by ${event.author}`;
         section.appendChild(author);
