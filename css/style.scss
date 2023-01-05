@@ -4,11 +4,13 @@
 // pour importer un élément: @extend %lenomdetonplaceholder
 @import './assets/_variables';
 // pour importer un élément: $exemplecouleur
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
 body{
     background-image: url(Images/fond.jpg);
-    background-size: cover;
     background-repeat: no-repeat;
+    background-size: cover;
+    color:white;
 }
 
 .title{
@@ -16,7 +18,18 @@ body{
     justify-content: flex-end;
     padding:1%;
     font-size:3em;
-    
+    font-family: 'Quicksand', sans-serif;
+    text-transform:uppercase;
+}
+
+.buttonadd{
     color:white;
+    background-color: $grey;
+    padding:1em 1.7em;
+    border-radius: 10em;
+    list-style-type: none;
+    &focus{
+        background-color: white;
+    }
 }
 
