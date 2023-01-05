@@ -20,11 +20,13 @@ async function displayEvents() {
         const description = document.createElement("p");
         description.innerText = event.description;
         section.appendChild(description);
+        const nameInput = document.createElement("input");
+        nameInput.setAttribute("type", "text");
+        section.appendChild(nameInput);
 
         for (let date of event.dates) {
             const dateDisplayed = document.createElement("h3");
             dateDisplayed.innerText = date.date;
-
             article.appendChild(dateDisplayed);
 
             const dateAgree = document.createElement("input");
@@ -32,27 +34,37 @@ async function displayEvents() {
             dateAgree.setAttribute("name", "agree");
             const labelAgree = document.createElement("label");
             labelAgree.setAttribute("for", "agree");
+            article.appendChild(dateAgree);
 
             const dateDisagree = document.createElement("input");
             dateDisagree.setAttribute("type", "checkbox");
             dateDisagree.setAttribute("name", "disagree");
             const labelDisagree = document.createElement("label");
             labelDisagree.setAttribute("for", "disagree");
+            article.appendChild(dateDisagree);
 
             for (let attendee of date.attendees) {
                 const attendeeName = document.createElement("h3");
+                const div = document.createElement("div");
                 attendeeName.innerText = attendee.name;
-                article.appendChild(attendeeName);
+                div.appendChild(attendeeName);
+
                 const availability = document.createElement("h3");
                 if (attendee.available === true) {
                     availability.innerText = "v";
                 } else {
                     availability.innerText = "x";
                 }
-                article.appendChild(availability);
+                div.appendChild(availability);
+
+                article.appendChild(div);
             }
         }
+
         section.appendChild(article);
+        const author = document.createElement("h4")
+        author.innerText = `Event created by ${event.author}`;
+        section.appendChild(author);
         main.appendChild(section);
     }
 }
