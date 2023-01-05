@@ -8,7 +8,8 @@ async function getEvents() {
 async function displayEvents() {
     const main = document.querySelector("main");
     let events = await getEvents();
-    for (let event of events) {
+    for (let i = 0; i < events.length; i++) {
+        let event = events[i];
         const section = document.createElement("section");
         console.log(event)
 
@@ -31,7 +32,8 @@ async function displayEvents() {
         divDate.appendChild(divTitle);
         divCheckbox.className = "div-checkbox";
 
-        for (let date of event.dates) {
+        for (let i = 0; i < event.dates.length; i++) {
+            let date = event.dates[i];
             const dateDisplayed = document.createElement("h3");
             dateDisplayed.innerText = date.date;
             divDate.appendChild(dateDisplayed);
@@ -55,9 +57,9 @@ async function displayEvents() {
             divCheckbox.appendChild(labelDisagree);
 
             section.appendChild(divDate);
-            section.appendChild(divCheckbox);
 
-            for (let attendee of date.attendees) {
+            for (let i = 0; i < date.attendees.length; i++) {
+                let attendee = date.attendee[i];
                 const attendeeName = document.createElement("h3");
                 const divByName = document.createElement("div");
                 divByName.className = "div-name";
@@ -71,15 +73,20 @@ async function displayEvents() {
                     availability.innerText = "x";
                 }
                 divByName.appendChild(availability);
-
                 section.appendChild(divByName);
             }
+
         }
+        section.appendChild(divCheckbox);
+
         const author = document.createElement("h4")
         author.innerText = `Event created by ${event.author}`;
         section.appendChild(author);
         main.appendChild(section);
+
     }
+
 }
+
 
 displayEvents();
