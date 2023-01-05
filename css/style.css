@@ -2,4 +2,12 @@ body {
   background-image: url(Images/fond.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.title {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1%;
+  font-size: 3em;
+  color: white;
 }/*# sourceMappingURL=style.css.map */

@@ -1,13 +1,22 @@
-@import './scss/_mixins';
+@import './assets/_mixins';
 // pour importer un élément: @include absolute-el()
-@import './scss/_placeholders'; 
+@import './assets/_placeholders'; 
 // pour importer un élément: @extend %lenomdetonplaceholder
-@import './scss/_variables';
+@import './assets/_variables';
 // pour importer un élément: $exemplecouleur
 
 body{
     background-image: url(Images/fond.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.title{
+    display: flex;
+    justify-content: flex-end;
+    padding:1%;
+    font-size:3em;
+    
+    color:white;
 }
 
