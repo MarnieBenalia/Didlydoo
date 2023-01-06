@@ -4,6 +4,7 @@
 // pour importer un élément: @extend %lenomdetonplaceholder
 @import './assets/_variables';
 // pour importer un élément: $exemplecouleur
+@import "./assets/_keyframes";
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
@@ -18,8 +19,8 @@
 }
   
 body{
-   // background-image: url(Images/fond480p.jpg);
-   background-color: rgb(61, 125, 199);
+    background-image: url(Images/fond.jpg);
+    background-color: rgb(61, 125, 199);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: fixed;
@@ -28,6 +29,7 @@ body{
 }
 
 //-------------------------HEADER-----------------------//
+
 .title{
     display: flex;
     justify-content: flex-end;
@@ -38,12 +40,12 @@ body{
 }
 
 .buttonadd{
-    margin:10% 32%;
+    margin:10% 27%;
     color:white;
     text-transform:uppercase;
     font-size:1em;
     border-radius: 16px;
-    padding:0.5em 2em;
+    padding:0.8em 4em;
     border-radius: 10em;
     @extend %glassmorphismbutton;
     &:focus{
@@ -61,12 +63,12 @@ section{
     @extend %glassmorphismbackground;
 }
 
-h2{                     //"Titre de l'Event"
+h2{//"Titre de l'Event"
     text-align: center;
     padding:1em;
 }
 
-p{                      //"Description Event"
+p{//"Description Event"
     text-align:center;
     padding-bottom:4%;
 }
@@ -87,10 +89,9 @@ p{                      //"Description Event"
 h3{
     margin: 3%;
     font-size:0.9em;
-
 }
 
-h4{                     //"Event created by"
+h4{//"Event created by"
     display: flex;
     justify-content: flex-end;
     font-size: 0.7em;
@@ -98,18 +99,47 @@ h4{                     //"Event created by"
 //-----------------------ASIDE-------------------------//
 
 aside{
+    top:0;
+    position:absolute;
     flex-direction: column;
-    display: none;
-    background-color:black;
+    display: flex;
+    margin-left:-100%;
+    background-color:$grey;
     padding:5%;
-    margin:5%;
-    height:15em;
+    margin-top:13em ;
+    width: 24em;
+    height:auto;
+    transition: all 0.5s;
 }
 
+input{
+    background-color: $grey;
+    color: white;
+    border: 0.1px solid rgb(68, 68, 68);
+    padding:0.3em;
+    margin-bottom: 1.3em;
+    border-radius: 0.1em;
+
+}
+
+.button-close{
+    margin:0em 3em 0.3em 22.2em;
+}
+.button-submit{
+    width: 10em;
+    color:$grey;
+    text-transform:uppercase;
+    font-size:1em;
+    border-radius: 16px;
+    padding:0.5em 2em;
+    border-radius: 10em;
+
+}
 //-----------------------FOOTER-------------------------//
 
 footer{
-    margin-top: 7em;
+    margin-top: 1em;
+    margin-bottom:1em;
     display:flex;
     justify-content: space-evenly;
 }
@@ -123,6 +153,7 @@ a{
 @media screen and (min-width: 1023px) {
 
 //--------------HEADER-----------------------//
+
 .title{
         font-size:3em;
         padding:2%;
@@ -140,6 +171,7 @@ a{
 }
 
 //--------------MAIN-----------------------//
+
 main{
     display: flex;
     flex-direction:row;
@@ -150,7 +182,21 @@ section{
     flex-direction: column;
     width:30em;
 }
+.button-close{
+    &:hover{
+        cursor:pointer;
+    }
+}
+//--------------ASIDE-----------------------//
 
+aside{
+    top:0;
+    padding:2%;
+    margin-top:0em ;
+    width: 20%;
+    height:100%;
+
+}
 //--------------FOOTER-----------------------//
 
 a{
@@ -159,5 +205,4 @@ a{
     cursor:pointer;
 }
 }
-
 }
