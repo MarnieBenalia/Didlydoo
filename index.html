@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Didlydoo</title>
-    <script defer src="js/script.js"></script>
-    <script defer src="js/form.js"></script>
+    <script defer src="js/script.js" type="module"></script>
+    <script defer src="js/create-event.js" type="module"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -23,13 +23,13 @@
         <path d="M18 6L6 18" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M6 6L18 18" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <input class="input-title" type="text" placeholder="Titre de l'event"></input>
-        <input class="input-author" type="text" placeholder="Auteur"></input>
-        <input class="input-description" type="text" placeholder="Description"></input>
-        <input class="input-date" type="date"></input>
-        <input class="input-date" type="date"></input>
-        <input class="input-date" type="date"></input>
-        <button class="button-submit"> submit</button>
+        <input class="input-title" type="text" placeholder="Titre de l'event">
+        <input class="input-author" type="text" placeholder="Auteur">
+        <input class="input-description" type="text" placeholder="Description">
+        <input class="input-date" type="text" onfocus="(this.type='date')"placeholder="First date">
+        <input class="input-date" type="text" onfocus="(this.type='date')"placeholder="Second date">
+        <input class="input-date" type="text" onfocus="(this.type='date')"placeholder="Third date">
+        <button class="button-submit">Submit</button>
     </aside>
     <footer>
         <a href="https://manesjonathan.github.io/">Jonathan Manes</a>

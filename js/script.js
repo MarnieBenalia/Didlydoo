@@ -1,18 +1,21 @@
-const main = document.querySelector("main");
+import { createAttendeeForEvent, fetchEvents } from "./backend.js";
+import { editDataEvent } from "./edit-event.js";
 
-async function fetchEvents() {
-    const BACKEND_URL = "http://localhost:3000/api/events/"
-    const request = await fetch(BACKEND_URL);
-    const response = await request.json();
-    return response;
-}
+const main = document.querySelector("main");
 
 async function displayEvents() {
 
+
     let events = await fetchEvents();
-    const attendeesByEvent = new Map();
     for (const event of events) {
+        let checkedRadio = [];
+        const attendeesByEvent = new Map();
+
         const section = document.createElement("section");
+        /* section.addEventListener("click", (e) => {
+            e.preventDefault();
+            editDataEvent(event, "update");
+        }) */
         main.appendChild(section);
 
         //section title
@@ -41,51 +44,94 @@ async function displayEvents() {
         divCheckbox.className = "div-checkbox";
         section.appendChild(divCheckbox);
 
-        for (const date of event.dates) {
-
+        let date = null;
+        for (const eventDate of event.dates) {
+            date = eventDate;
             //create date element for div dates
             const dateDisplayed = document.createElement("h3");
-            dateDisplayed.innerText = date.date;
+            dateDisplayed.innerText = eventDate.date;
             divDates.appendChild(dateDisplayed); //append date element to div dates
 
             //div checkbox agree
-            const dateAgree = document.createElement("input");
-            dateAgree.setAttribute("type", "checkbox");
-            dateAgree.setAttribute("id", "agree");
-            const labelAgree = document.createElement("label");
-            labelAgree.setAttribute("for", "agree");
-            labelAgree.innerText = "Agree";
-            divCheckbox.appendChild(dateAgree); //append agree box to div checkbox
-            divCheckbox.appendChild(labelAgree); //append label to div checkbox
+            const yesRadio = document.createElement("input");
+            yesRadio.setAttribute("type", "radio");
+            yesRadio.setAttribute("name", `${eventDate.date}`);
+            yesRadio.innerHTML = "V";
+            divCheckbox.appendChild(yesRadio); //append agree box to div checkbox
+
+
+            const labelYes = document.createElement("label");
+            labelYes.textContent = "V";
+            divCheckbox.appendChild(labelYes);
 
             //div checkbox disagree
-            const dateDisagree = document.createElement("input");
-            dateDisagree.setAttribute("type", "checkbox");
-            dateDisagree.setAttribute("id", "disagree");
-            const labelDisagree = document.createElement("label");
-            labelDisagree.setAttribute("for", "disagree");
-            labelDisagree.innerText = "Disagree";
-            divCheckbox.appendChild(dateDisagree); //append disagree box to div checkbox
-            divCheckbox.appendChild(labelDisagree); //append label to div checkbox
+            const noRadio = document.createElement("input");
+            noRadio.setAttribute("type", "radio");
+            noRadio.setAttribute("name", `${eventDate.date}`);
+            noRadio.innerText = "X";
+            divCheckbox.appendChild(noRadio); //append disagree box to div checkbox
+
+            const labelNo = document.createElement("label");
+            labelNo.textContent = "X";
+            divCheckbox.appendChild(labelNo);
 
             section.appendChild(divDates); //append div dates to section
 
-            for (const attendee of date.attendees) {
+            yesRadio.addEventListener('change', () => {
+                if (yesRadio.checked) {
+                    noRadio.checked = false;
+                    checkedRadio.push({ date: yesRadio.name, available: true })
+                }
+            });
+
+            noRadio.addEventListener('change', () => {
+                if (noRadio.checked) {
+                    yesRadio.checked = false;
+                    checkedRadio.push({ date: yesRadio.name, available: false })
+
+                    /*  checkedRadio.filter(function (obj) {
+                         return obj.date !== date.date;
+                     }); */
+
+                }
+            });
+
+            for (const attendee of eventDate.attendees) {
                 if (!attendees.has(attendee.name)) {
                     attendees.set(attendee.name, { name: attendee.name, dates: [] });
                 }
                 const attendeeObject = attendees.get(attendee.name);
-                attendeeObject.dates.push({ date: date.date, available: attendee.available });
+                attendeeObject.dates.push({ date: eventDate.date, available: attendee.available });
             }
+
         }
+
         const nameInput = document.createElement("input");
         nameInput.setAttribute("type", "text");
         divCheckbox.prepend(nameInput);
 
         attendeesByEvent.set(event.name, Array.from(attendees.values()));
-        displayAttendeeByEvent(attendeesByEvent, section);
         section.appendChild(divCheckbox);
 
+        const submitButton = document.createElement("button");
+        submitButton.className = "submit-attendee"
+        submitButton.innerText = "Submit";
+        divCheckbox.appendChild(submitButton);
+        submitButton.addEventListener("click", (e) => {
+
+            let attendee = {
+                name: nameInput.value,
+                dates: checkedRadio
+            }
+            e.preventDefault();
+            console.log(checkedRadio);
+            createAttendeeForEvent(attendee, event.id)
+        });
+
+        displayAttendeeByEvent(attendeesByEvent, section);
+        const author = document.createElement("h4")
+        author.innerText = `Event created by ${event.author}`;
+        section.appendChild(author);
     }
 }
 
@@ -125,22 +171,3 @@ function displayAttendeeByEvent(attendeesByEvent, section) {
 }
 
 displayEvents();
-
-//---------------------------------------------------------------------------------------------------------//
-
-const BUTTON = document.querySelector(".buttonadd");
-const ASIDE =document.querySelector("aside");
-
-BUTTON.addEventListener('click',() =>{
-
-    ASIDE.style.marginLeft="0%"
-
-})
-
-const BUTTONCLOSE = document.querySelector(".button-close");
-
-BUTTONCLOSE.addEventListener('click',() =>{
-
-    ASIDE.style.marginLeft="-100%"
-
-})
