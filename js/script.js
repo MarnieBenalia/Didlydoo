@@ -127,3 +127,13 @@ function displayAttendeeByEvent(attendeesByEvent, section) {
 }
 
 displayEvents();
+
+//---------------------------------------------------------------------------------------------------------//
+
+const BUTTON = document.querySelector(".buttonadd");
+const ASIDE =document.querySelector("aside");
+
+BUTTON.addEventListener('click',() =>{
+
+    ASIDE.style.display="flex";
+})

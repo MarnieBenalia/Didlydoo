@@ -18,6 +18,8 @@ section {
 * {
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  list-style: none;
 }
 
 body {
@@ -48,7 +50,6 @@ body {
   border-radius: 10em;
 }
 .buttonadd:focus {
-  cursor: pointer;
   background: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.6);
   color: #1E1E1E;
@@ -69,16 +70,37 @@ p {
   padding-bottom: 4%;
 }
 
-.div-date {
+.div-attendees {
   display: flex;
   flex-direction: row;
-  font-size: 0.68em;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.div-dates {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+h3 {
+  margin: 3%;
+  font-size: 0.9em;
 }
 
 h4 {
   display: flex;
   justify-content: flex-end;
   font-size: 0.7em;
+}
+
+aside {
+  flex-direction: column;
+  display: none;
+  background-color: black;
+  padding: 5%;
+  margin: 5%;
+  height: 15em;
 }
 
 footer {
@@ -89,7 +111,6 @@ footer {
 
 a {
   color: white;
-  list-style-type: none;
 }
 
 @media screen and (min-width: 1023px) {
@@ -115,5 +136,9 @@ a {
     display: flex;
     flex-direction: column;
     width: 30em;
+  }
+  a:hover {
+    color: #1E1E1E;
+    cursor: pointer;
   }
 }/*# sourceMappingURL=style.css.map */
