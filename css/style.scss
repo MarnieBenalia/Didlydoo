@@ -1,0 +1,134 @@
+@import './assets/_mixins';
+// pour importer un élément: @include absolute-el()
+@import './assets/_placeholders'; 
+// pour importer un élément: @extend %lenomdetonplaceholder
+@import './assets/_variables';
+// pour importer un élément: $exemplecouleur
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+
+//-----------------------//
+
+*{
+    margin: 0;
+    padding: 0;
+}
+  
+body{
+   // background-image: url(Images/fond480p.jpg);
+   background-color: rgb(61, 125, 199);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: fixed;
+    color:white;
+    font-family: 'Heebo';
+}
+
+//-------------------------HEADER-----------------------//
+
+
+.title{
+    display: flex;
+    justify-content: flex-end;
+    padding:5%;
+    font-size:2em;
+    font-family: 'Quicksand', sans-serif;
+    text-transform:uppercase;
+}
+
+.buttonadd{
+    margin:10% 32%;
+    color:white;
+    text-transform:uppercase;
+    font-size:1em;
+    border-radius: 16px;
+    padding:0.5em 2em;
+    border-radius: 10em;
+    @extend %glassmorphismbutton;
+    &:focus{
+        cursor: pointer;    
+        background: rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color:$grey;
+    }
+}
+
+//-------------------------MAIN-----------------------//
+
+section{
+    margin: 3% 5%;
+    padding:3%;
+    @extend %glassmorphismbackground;
+}
+
+h2{                     //"Titre de l'Event"
+    text-align: center;
+    padding:1em;
+}
+
+p{                      //"Description Event"
+    text-align:center;
+    padding-bottom:4%;
+}
+
+.div-date{
+    display:flex;
+    flex-direction: row;
+    font-size: 0.68em;
+}
+
+
+h4{                     //"Event created by"
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.7em;
+}
+
+//-----------------------FOOTER-------------------------//
+
+footer{
+    margin-top: 7em;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+a{
+    color:white;
+    list-style-type: none;
+}
+
+//-----------------------MEDIA QUERIES-------------------------//
+
+
+@media screen and (min-width: 1023px) {
+
+.title{
+        font-size:3em;
+        padding:2%;
+}
+    
+.buttonadd{
+    font-size:1.5em;
+    margin:3% 40%;
+        &:hover{
+            cursor: pointer;    
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            color:$grey;
+        }
+}
+
+main{
+    display: flex;
+    flex-direction:row;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    width:30em;
+}
+
+
+}
