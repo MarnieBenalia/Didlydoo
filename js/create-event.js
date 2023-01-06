@@ -26,9 +26,18 @@ buttonSubmit.addEventListener("click", (e) => {
 //---------------------------------------------------------------------------------------------------------//
 
 const BUTTON = document.querySelector(".buttonadd");
-const ASIDE = document.querySelector("aside");
+const ASIDE =document.querySelector("aside");
 
-BUTTON.addEventListener('click', () => {
+BUTTON.addEventListener('click',() =>{
 
-    ASIDE.style.display = "flex";
+    ASIDE.style.marginLeft="0%"
+
+})
+
+const BUTTONCLOSE = document.querySelector(".button-close");
+
+BUTTONCLOSE.addEventListener('click',() =>{
+
+    ASIDE.style.marginLeft="-100%"
+
 })
