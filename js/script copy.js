@@ -120,3 +120,23 @@ function createAttendees(date, section) {
 }
 
 displayEvents();
+
+
+/* function createAttendeesByEvent(event) {
+    let attendees = {};
+    for (let i = 0; i < event.dates.length; i++) {
+        let date = event.dates[i];
+        for (let i = 0; i < date.attendees.length; i++) {
+            let attendee = date.attendees[i];
+
+            if (!attendees[attendee.name]) {
+                attendees[attendee.name] = {};
+            }
+
+            attendees[attendee.name][date.date] = attendee.available;
+            attendees[attendee.name]["name"] = attendee.name;
+        };
+    };
+
+    return [event.dates, attendees];
+} */
