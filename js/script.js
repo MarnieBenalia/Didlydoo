@@ -1,12 +1,11 @@
 const main = document.querySelector("main");
 
 async function fetchEvents() {
-    const BACKEND_URL = "http://localhost:3000/api/events"
+    const BACKEND_URL = "http://localhost:3000/api/events/"
     const request = await fetch(BACKEND_URL);
     const response = await request.json();
     return response;
 }
-
 
 async function displayEvents() {
 
@@ -27,9 +26,6 @@ async function displayEvents() {
 
         section.appendChild(description); //append title and description
 
-
-
-
         const attendees = new Map();
         const divDates = document.createElement("div");
         divDates.className = "div-dates"
@@ -40,14 +36,39 @@ async function displayEvents() {
         divTitle.innerText = "Name/Date";
         divDates.appendChild(divTitle); //append div title
 
-
-
+        //create div checkbox
+        const divCheckbox = document.createElement("div");
+        divCheckbox.className = "div-checkbox";
+        section.appendChild(divCheckbox);
 
         for (const date of event.dates) {
+
+            //create date element for div dates
             const dateDisplayed = document.createElement("h3");
             dateDisplayed.innerText = date.date;
-            divDates.appendChild(dateDisplayed);
+            divDates.appendChild(dateDisplayed); //append date element to div dates
 
+            //div checkbox agree
+            const dateAgree = document.createElement("input");
+            dateAgree.setAttribute("type", "checkbox");
+            dateAgree.setAttribute("id", "agree");
+            const labelAgree = document.createElement("label");
+            labelAgree.setAttribute("for", "agree");
+            labelAgree.innerText = "Agree";
+            divCheckbox.appendChild(dateAgree); //append agree box to div checkbox
+            divCheckbox.appendChild(labelAgree); //append label to div checkbox
+
+            //div checkbox disagree
+            const dateDisagree = document.createElement("input");
+            dateDisagree.setAttribute("type", "checkbox");
+            dateDisagree.setAttribute("id", "disagree");
+            const labelDisagree = document.createElement("label");
+            labelDisagree.setAttribute("for", "disagree");
+            labelDisagree.innerText = "Disagree";
+            divCheckbox.appendChild(dateDisagree); //append disagree box to div checkbox
+            divCheckbox.appendChild(labelDisagree); //append label to div checkbox
+
+            section.appendChild(divDates); //append div dates to section
 
             for (const attendee of date.attendees) {
                 if (!attendees.has(attendee.name)) {
@@ -57,38 +78,19 @@ async function displayEvents() {
                 attendeeObject.dates.push({ date: date.date, available: attendee.available });
             }
         }
+        const nameInput = document.createElement("input");
+        nameInput.setAttribute("type", "text");
+        divCheckbox.prepend(nameInput);
+
         attendeesByEvent.set(event.name, Array.from(attendees.values()));
         displayAttendeeByEvent(attendeesByEvent, section);
+        section.appendChild(divCheckbox);
 
     }
-
 }
 
-
-/* function createAttendeesByEvent(event) {
-    let attendees = {};
-    for (let i = 0; i < event.dates.length; i++) {
-        let date = event.dates[i];
-        for (let i = 0; i < date.attendees.length; i++) {
-            let attendee = date.attendees[i];
-
-            if (!attendees[attendee.name]) {
-                attendees[attendee.name] = {};
-            }
-
-            attendees[attendee.name][date.date] = attendee.available;
-            attendees[attendee.name]["name"] = attendee.name;
-        };
-    };
-
-    return [event.dates, attendees];
-} */
-
 function displayAttendeeByEvent(attendeesByEvent, section) {
-
     attendeesByEvent.forEach(event => {
-
-        console.log(event);
         event.forEach(attendee => {
             const divAttendee = document.createElement("div");
             divAttendee.className = "div-attendees"
@@ -97,8 +99,6 @@ function displayAttendeeByEvent(attendeesByEvent, section) {
             const attendeeDisplayed = document.createElement("h3");
             attendeeDisplayed.innerText = attendee.name;
             divAttendee.appendChild(attendeeDisplayed);
-
-
 
             attendee["dates"].forEach(date => {
                 const dateDisplayed = document.createElement("h3");
@@ -119,11 +119,9 @@ function displayAttendeeByEvent(attendeesByEvent, section) {
 
                 }
                 divAttendee.appendChild(dateDisplayed)
-
             })
         })
     });
-
 }
 
 displayEvents();
