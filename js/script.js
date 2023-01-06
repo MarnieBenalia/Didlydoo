@@ -1,92 +1,129 @@
-async function getEvents() {
+const main = document.querySelector("main");
+
+async function fetchEvents() {
     const BACKEND_URL = "http://localhost:3000/api/events"
     const request = await fetch(BACKEND_URL);
     const response = await request.json();
     return response;
 }
 
-async function displayEvents() {
-    const main = document.querySelector("main");
-    let events = await getEvents();
-    for (let i = 0; i < events.length; i++) {
-        let event = events[i];
-        const section = document.createElement("section");
-        console.log(event)
 
+async function displayEvents() {
+
+    let events = await fetchEvents();
+    const attendeesByEvent = new Map();
+    for (const event of events) {
+        const section = document.createElement("section");
+        main.appendChild(section);
+
+        //section title
         const title = document.createElement("h2");
         title.innerText = event.name;
         section.appendChild(title);
 
+        //section description
         const description = document.createElement("p");
         description.innerText = event.description;
-        section.appendChild(description);
-        const nameInput = document.createElement("input");
-        nameInput.setAttribute("type", "text");
-        section.appendChild(nameInput);
 
-        const divDate = document.createElement("div");
-        divDate.className = "div-date";
-        const divCheckbox = document.createElement("div");
+        section.appendChild(description); //append title and description
+
+
+
+
+        const attendees = new Map();
+        const divDates = document.createElement("div");
+        divDates.className = "div-dates"
+        section.appendChild(divDates);
+
+        //div title
         const divTitle = document.createElement("h3");
         divTitle.innerText = "Name/Date";
-        divDate.appendChild(divTitle);
-        divCheckbox.className = "div-checkbox";
+        divDates.appendChild(divTitle); //append div title
 
-        for (let i = 0; i < event.dates.length; i++) {
-            let date = event.dates[i];
+
+
+
+        for (const date of event.dates) {
             const dateDisplayed = document.createElement("h3");
             dateDisplayed.innerText = date.date;
-            divDate.appendChild(dateDisplayed);
+            divDates.appendChild(dateDisplayed);
 
-            const dateAgree = document.createElement("input");
-            dateAgree.setAttribute("type", "checkbox");
-            dateAgree.setAttribute("id", "agree");
-            const labelAgree = document.createElement("label");
-            labelAgree.setAttribute("for", "agree");
-            labelAgree.innerText = "Agree"
-            divCheckbox.appendChild(dateAgree);
-            divCheckbox.appendChild(labelAgree);
 
-            const dateDisagree = document.createElement("input");
-            dateDisagree.setAttribute("type", "checkbox");
-            dateDisagree.setAttribute("id", "disagree");
-            const labelDisagree = document.createElement("label");
-            labelDisagree.setAttribute("for", "disagree");
-            labelDisagree.innerText = "Disagree";
-            divCheckbox.appendChild(dateDisagree);
-            divCheckbox.appendChild(labelDisagree);
-
-            section.appendChild(divDate);
-
-            for (let i = 0; i < date.attendees.length; i++) {
-                let attendee = date.attendee[i];
-                const attendeeName = document.createElement("h3");
-                const divByName = document.createElement("div");
-                divByName.className = "div-name";
-                attendeeName.innerText = attendee.name;
-                divByName.appendChild(attendeeName);
-
-                const availability = document.createElement("h3");
-                if (attendee.available === true) {
-                    availability.innerText = "v";
-                } else {
-                    availability.innerText = "x";
+            for (const attendee of date.attendees) {
+                if (!attendees.has(attendee.name)) {
+                    attendees.set(attendee.name, { name: attendee.name, dates: [] });
                 }
-                divByName.appendChild(availability);
-                section.appendChild(divByName);
+                const attendeeObject = attendees.get(attendee.name);
+                attendeeObject.dates.push({ date: date.date, available: attendee.available });
             }
-
         }
-        section.appendChild(divCheckbox);
-
-        const author = document.createElement("h4")
-        author.innerText = `Event created by ${event.author}`;
-        section.appendChild(author);
-        main.appendChild(section);
+        attendeesByEvent.set(event.name, Array.from(attendees.values()));
+        displayAttendeeByEvent(attendeesByEvent, section);
 
     }
 
 }
 
+
+/* function createAttendeesByEvent(event) {
+    let attendees = {};
+    for (let i = 0; i < event.dates.length; i++) {
+        let date = event.dates[i];
+        for (let i = 0; i < date.attendees.length; i++) {
+            let attendee = date.attendees[i];
+
+            if (!attendees[attendee.name]) {
+                attendees[attendee.name] = {};
+            }
+
+            attendees[attendee.name][date.date] = attendee.available;
+            attendees[attendee.name]["name"] = attendee.name;
+        };
+    };
+
+    return [event.dates, attendees];
+} */
+
+function displayAttendeeByEvent(attendeesByEvent, section) {
+
+    attendeesByEvent.forEach(event => {
+
+        console.log(event);
+        event.forEach(attendee => {
+            const divAttendee = document.createElement("div");
+            divAttendee.className = "div-attendees"
+            section.appendChild(divAttendee);
+
+            const attendeeDisplayed = document.createElement("h3");
+            attendeeDisplayed.innerText = attendee.name;
+            divAttendee.appendChild(attendeeDisplayed);
+
+
+
+            attendee["dates"].forEach(date => {
+                const dateDisplayed = document.createElement("h3");
+                dateDisplayed.innerText = date.date;
+                divAttendee.appendChild(dateDisplayed);
+                switch (date.available) {
+                    case null:
+                        dateDisplayed.innerText = "null";
+                        break;
+
+                    case true:
+                        dateDisplayed.innerText = "true";
+                        break;
+
+                    case false:
+                        dateDisplayed.innerText = "false";
+                        break;
+
+                }
+                divAttendee.appendChild(dateDisplayed)
+
+            })
+        })
+    });
+
+}
 
 displayEvents();
