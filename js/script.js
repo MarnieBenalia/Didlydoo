@@ -161,7 +161,6 @@ function displayAttendeeByEvent(attendeesByEvent, section) {
 
             // iterate throw date list
             attendee["dates"].forEach(date => {
-
                 //create availability status
                 const dateDisplayed = document.createElement("h3");
 
@@ -178,7 +177,6 @@ function displayAttendeeByEvent(attendeesByEvent, section) {
                     case false:
                         dateDisplayed.innerText = "false";
                         break;
-
                 }
 
                 //append availability to div for each event date
@@ -188,4 +186,5 @@ function displayAttendeeByEvent(attendeesByEvent, section) {
     });
 }
 
-displayEvents(); //execute main function
+//execute main function
+displayEvents(); 

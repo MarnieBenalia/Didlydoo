@@ -6,7 +6,7 @@ export async function fetchEvents() {
     return response;
 }
 
-//POST new event to backend
+//POST new event
 export function createEvent(newEvent) {
     const BACKEND_URL = "http://localhost:3000/api/events/"
     fetch(BACKEND_URL, {
@@ -20,7 +20,7 @@ export function createEvent(newEvent) {
     });
 }
 
-//POST new attendee for event to server
+//POST new attendee for event
 export function createAttendeeForEvent(attendee, eventId) {
     const BACKEND_URL = `http://localhost:3000/api/events/${eventId}/attend`
     fetch(BACKEND_URL, {
@@ -37,7 +37,6 @@ export function createAttendeeForEvent(attendee, eventId) {
 //PATCH event basic infos
 export function updateEvent(event, id) {
     const BACKEND_URL = `http://localhost:3000/api/events/${id}/`
-    console.log(BACKEND_URL);
     fetch(BACKEND_URL, {
         method: 'PATCH',
         headers: {
