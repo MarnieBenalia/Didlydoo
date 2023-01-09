@@ -119,15 +119,20 @@ p {
 
 .div-checkbox {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
-  margin: 3% 1%;
   margin-top: 1.5em;
+  text-align: center;
+  margin-left: 37%;
 }
-.div-checkbox input {
-  margin-left: 2%;
+
+.labelNo {
+  margin-right: 20%;
 }
 
 .inputName {
+  margin-top: 1em;
   width: 10em;
   margin-right: 5%;
 }
@@ -244,7 +249,12 @@ a {
     justify-content: center;
   }
   .inputName {
-    width: 20em;
+    width: 10em;
+  }
+  .div-inputsubmit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   aside {
     top: 0;

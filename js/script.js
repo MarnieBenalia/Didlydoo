@@ -68,6 +68,7 @@ async function displayEvents() {
 
             //create label for disagree
             const labelNo = document.createElement("label");
+            labelNo.className="labelNo";
             labelNo.textContent = "X";
             divCheckbox.appendChild(labelNo); //append label to checkbox
 
@@ -104,7 +105,7 @@ async function displayEvents() {
 
         //create submit button for new attendee
         const submitButton = document.createElement("button");
-        submitButton.className = "submit-attendee"
+        submitButton.className = "submit-attendee";
         submitButton.innerText = "Submit";
 
         //set listener for submit button
@@ -126,9 +127,13 @@ async function displayEvents() {
         const nameInput = document.createElement("input");
         nameInput.className="inputName";
         nameInput.setAttribute("type", "text");
-        section.appendChild(nameInput); //append input to div that contains checkboxes
+        nameInput.setAttribute("placeholder", "ENTER YOUR NAME");
         section.appendChild(divCheckbox); //append div checkbox to section(before the author)
-        section.appendChild(submitButton); //append button to div checkbox
+        let divInputSubmit = document.createElement("div");
+        divInputSubmit.className = "div-inputsubmit";
+        divInputSubmit.appendChild(nameInput); //append input to div that contains checkboxes
+        divInputSubmit.appendChild(submitButton); //append button to div checkbox
+        section.appendChild(divInputSubmit);
 
         //create div for author edit and trash
         const divAuthor = document.createElement("div");
