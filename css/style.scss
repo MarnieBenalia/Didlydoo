@@ -17,12 +17,14 @@
     text-decoration:none;
     list-style: none;
 }
-  
+html{
+    height: 100%;
+}
 body{
-    background-image: url(/css/images/fond2.jpg);
+    background-image:url(/css/images/fond.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
+    //height: 100%;
     color:white;
     font-family: 'Heebo';
 }
@@ -65,7 +67,7 @@ main{
     flex-wrap: wrap;
     color:black;
     width:auto;
-   // height:15em;
+    //height:15em;
   // height:34em;
 }
 
@@ -171,6 +173,10 @@ section{
 
 footer{
     @include flexcontent (flex, space-evenly);
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    height:2em; 
 }
 
 a{
@@ -204,7 +210,7 @@ a{
 
 main{
     @include flexdirect (flex, row);
-    height:20em;
+    //height:20em;
 }
 
 section{
