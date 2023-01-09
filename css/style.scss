@@ -79,7 +79,7 @@ p{//"Description Event"
     padding-bottom:4%;
 }
 
-.div-attendees {
+.div-attendees {//"Tableau pour afficher les noms et les dispositions"
     @include flexdirect (flex, row);
     width: 100%;
     border: 1px solid rgba(255, 255, 255, 0.6);
@@ -92,7 +92,7 @@ p{//"Description Event"
     }
 }
   
-.div-dates {
+.div-dates {//"Tableau pour afficher les noms et les dispositions"
     @include flexdirect (flex, row);
     width: 100%;
     display:table;
@@ -238,6 +238,6 @@ a{
         &:hover{
         color:$grey;
         cursor:pointer;
-}
+        }
 }
 }
