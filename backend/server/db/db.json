@@ -1,187 +1,47 @@
 [
   {
-    "id": "c6bee48d432e",
-    "name": "duodh",
-    "author": "djsfjio",
-    "description": "pdjspfj",
+    "id": "ae9357674749",
+    "name": "Anniversaire",
+    "author": "Marnie",
+    "description": "J'aime pas mon anniversaire",
     "dates": [
-      "2022-12-31",
       "2023-01-26",
-      "2023-01-25"
+      "2023-01-27",
+      "2023-01-28"
     ],
-    "created_at": "2023-01-09T10:41:30.648Z",
-    "num_modification": 1,
-    "last_modification": "2023-01-09T10:52:22.262Z",
+    "created_at": "2023-01-09T10:49:54.608Z",
+    "num_modification": 0,
+    "last_modification": "2023-01-09T10:49:54.608Z",
     "attendees": []
   },
   {
-    "id": "46e30186ad0e",
-    "name": "Event test",
-    "author": "Jonathan",
-    "description": "Even test",
+    "id": "c7e421946e9d",
+    "name": "Anniversaire",
+    "author": "Marnie",
+    "description": "J'aime pas mon anniversaire",
     "dates": [
-      "2023-01-10",
-      "2023-01-11",
-      "2023-01-12"
+      "2023-01-26",
+      "2023-01-27",
+      "2023-01-28"
     ],
-    "created_at": "2023-01-09T09:42:49.741Z",
-    "num_modification": 13,
-    "last_modification": "2023-01-09T10:25:43.067Z",
-    "attendees": [
-      {
-        "name": "Jonathan",
-        "dates": [
-          {
-            "date": "2023-01-10",
-            "available": true
-          },
-          {
-            "date": "2023-01-11",
-            "available": true
-          },
-          {
-            "date": "2023-01-12",
-            "available": false
-          }
-        ]
-      }
-    ]
+    "created_at": "2023-01-09T10:48:43.776Z",
+    "num_modification": 0,
+    "last_modification": "2023-01-09T10:48:43.776Z",
+    "attendees": []
   },
   {
-    "id": "f5b6564b5dc4",
-    "name": "My sweet 16",
-    "description": "I am going to be 16, let us all party together! Help me pick a date so we can go together",
-    "author": "John Doe",
+    "id": "5a48c9a594b9",
+    "name": "Anniversaire",
+    "author": "Marnie",
+    "description": "J'aime pas mon anniversaire",
     "dates": [
-      "2022-03-17",
-      "2022-03-18",
-      "2022-03-21",
-      "2022-03-22"
+      "2023-01-26",
+      "2023-01-27",
+      "2023-01-28"
     ],
-    "attendees": [
-      {
-        "name": "Michou",
-        "dates": [
-          {
-            "date": "2022-03-17",
-            "available": true
-          },
-          {
-            "date": "2022-03-18",
-            "available": false
-          },
-          {
-            "date": "2022-03-21",
-            "available": true
-          }
-        ]
-      },
-      {
-        "name": "Jean-Daniel",
-        "dates": [
-          {
-            "date": "2022-03-17",
-            "available": false
-          },
-          {
-            "date": "2022-03-21",
-            "available": true
-          }
-        ]
-      },
-      {
-        "name": "Jonathan",
-        "dates": [
-          {
-            "date": "2022-03-17",
-            "available": true
-          },
-          {
-            "date": "2022-03-18",
-            "available": false
-          },
-          {
-            "date": "2022-03-21",
-            "available": false
-          },
-          {
-            "date": "2022-03-22",
-            "available": true
-          }
-        ]
-      }
-    ],
-    "created_at": "2021-11-15T00:00",
-    "num_modification": 18,
-    "last_modification": "2023-01-09T09:46:47.948Z"
-  },
-  {
-    "id": "38b643aeb883",
-    "name": "The big sale @ The Mall",
-    "description": "I want to buy stuff at the mall, but don't want to go alone who is up?",
-    "author": "Jean D'eau",
-    "dates": [
-      "2022-01-10",
-      "2022-02-10",
-      "2022-03-10",
-      "2022-03-11",
-      "2022-03-12"
-    ],
-    "attendees": [
-      {
-        "name": "Michou",
-        "dates": [
-          {
-            "date": "2022-01-10",
-            "available": true
-          }
-        ]
-      },
-      {
-        "name": "Jane Doe",
-        "dates": [
-          {
-            "date": "2022-01-10",
-            "available": true
-          },
-          {
-            "date": "2022-02-10",
-            "available": true
-          },
-          {
-            "date": "2022-03-10",
-            "available": true
-          },
-          {
-            "date": "2022-03-11",
-            "available": true
-          },
-          {
-            "date": "2022-03-12",
-            "available": false
-          }
-        ]
-      },
-      {
-        "name": "Jonathan",
-        "dates": [
-          {
-            "date": "2022-01-10",
-            "available": true
-          },
-          {
-            "date": "2022-03-10",
-            "available": true
-          },
-          {
-            "date": "2022-03-12",
-            "available": true
-          }
-        ]
-      }
-    ],
-    "created_at": "2021-11-13T14:00",
-    "num_modification": 2,
-    "last_modification": "2023-01-09T08:52:35.552Z"
+    "created_at": "2023-01-09T10:48:31.573Z",
+    "num_modification": 0,
+    "last_modification": "2023-01-09T10:48:31.573Z",
+    "attendees": []
   }
 ]
