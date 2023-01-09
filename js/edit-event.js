@@ -14,16 +14,10 @@ export function editDataEvent(event) {
     inputAuthor.value = event.author;
     inputDescription.value = event.description;
 
-    let eventUpdated = {
-        name: inputTitle.value,
-        author: inputAuthor.value,
-        description: inputDescription.value,
-    };
-
     buttonUpdate.innerText = "Update"
     ASIDE.appendChild(buttonUpdate);
     buttonSubmit.style.display = "none"
-    
+
     let inputDateList = document.querySelectorAll(".input-date");
     inputDateList.forEach(inputDate => {
         inputDate.setAttribute("hidden", "true");
@@ -31,8 +25,14 @@ export function editDataEvent(event) {
 
     });
 
-    buttonUpdate.addEventListener("click", (e) => {
+    buttonUpdate.addEventListener("click", async (e) => {
         e.preventDefault();
+        let eventUpdated = {
+            name: inputTitle.value,
+            author: inputAuthor.value,
+            description: inputDescription.value,
+        };
+
         updateEvent(eventUpdated, event.id);
 
     })
