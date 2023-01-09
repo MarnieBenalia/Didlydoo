@@ -7,6 +7,10 @@ Introducing Didlydoo, the event planner!
 
 A backend developer has already created an API for the tool, so you can focus on the frontend. The list of endpoints is available below.
 
+## Duration
+
+3 days
+
 ## Tasks
 
     -seedling Display all the events, including everyone's availability
@@ -15,6 +19,13 @@ A backend developer has already created an API for the tool, so you can focus on
     -seedling Edit an event name/description/author
     -seedling Delete an event
     -seedling You must validate your inputs before sending the data to your backend, inputs required must be filed and shorter than 256 characters. If it's      not the case you don't send the request and display the appropriate error below the input.
+  
+ ## Languages
+ 
+- HTML
+- CSS
+- SASS
+- JAVASCRIPT
     
 ## Group
 
