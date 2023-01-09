@@ -1,4 +1,4 @@
-import { createAttendeeForEvent, fetchEvents } from "./backend.js";
+import { createAttendeeForEvent, deleteEvent, fetchEvents } from "./backend.js";
 import { editDataEvent } from "./edit-event.js";
 
 const main = document.querySelector("main");
@@ -13,12 +13,6 @@ async function displayEvents() {
         //create a section by event
         const section = document.createElement("section");
         main.appendChild(section); //append section to main tag
-
-        // TODO listener to move to edit button
-        /* section.addEventListener("click", (e) => {
-            e.preventDefault();
-            editDataEvent(event, "update");
-        }) */
 
         //section title
         const title = document.createElement("h2");
@@ -111,7 +105,7 @@ async function displayEvents() {
         //create input name for new attendee
         const nameInput = document.createElement("input");
         nameInput.setAttribute("type", "text");
-        divCheckbox.prepend(nameInput); //append input to div that contains checkboxes
+        section.appendChild(nameInput); //append input to div that contains checkboxes
 
         //create submit button for new attendee
         const submitButton = document.createElement("button");
@@ -137,10 +131,35 @@ async function displayEvents() {
 
         section.appendChild(divCheckbox); //append div checkbox to section(before the author)
 
+        //create div for author edit and trash
+        const divAuthor = document.createElement("div");
+        divAuthor.className = "div-author";
+        section.appendChild(divAuthor); //append div author to section
+
         //create author
         const author = document.createElement("h4")
         author.innerText = `Event created by ${event.author}`;
-        section.appendChild(author); //append author to section
+        divAuthor.appendChild(author); //append author to section
+
+        //create trash icon
+        const trash = document.createElement("i");
+        trash.className = "fa-solid fa-trash";
+        divAuthor.appendChild(trash);
+        trash.addEventListener("click", (e) => {
+            e.preventDefault();
+            console.log(event)
+            deleteEvent(event.id);
+        });
+
+
+        //create edit icon
+        const editButton = document.createElement("i");
+        editButton.className = "fa-solid fa-pen-to-square";
+        divAuthor.appendChild(editButton);
+        editButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            editDataEvent(event);
+        });
     }
 }
 

@@ -6,8 +6,6 @@ const inputDescription = document.querySelector(".input-description");
 const buttonSubmit = document.querySelector(".button-submit");
 const inputs = [...document.querySelectorAll("input")];
 
-
-
 //set listener on submit button 
 buttonSubmit.addEventListener("click", (e) => {
     e.preventDefault();
@@ -51,6 +49,10 @@ function isInputListEmpty() {
         if (input.value.length < 3) {
             input.style.borderColor = "red";
             input.setAttribute("placeholder", "Please enter a value");
+            isEmpty = true;
+        } else if (input.value.length > 256) {
+            input.style.borderColor = "red";
+            input.setAttribute("placeholder", "Please enter a value less than 256");
             isEmpty = true;
         } else {
             input.style.borderColor = "white";
