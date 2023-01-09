@@ -43,6 +43,19 @@ export function updateEvent(event, id) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(event)
+    }).then((response) => response.json())
+        .then((data) => {
+            alert('Success:', data);
+        }).catch((error) => {
+            console.error('Error:', error);
+        });
+}
+
+//DELETE event
+export function deleteEvent(id) {
+    const BACKEND_URL = `http://localhost:3000/api/events/${id}/`
+    fetch(BACKEND_URL, {
+        method: 'DELETE'
     }).catch((error) => {
         console.error('Error:', error);
     });
