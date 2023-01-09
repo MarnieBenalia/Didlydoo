@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Heebo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@600&display=swap");
 .buttonadd {
   background: rgba(0, 0, 0, 0.6);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -29,7 +30,6 @@ body {
   background-image: url(/css/images/fond.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
   color: white;
   font-family: "Heebo";
 }
@@ -52,7 +52,7 @@ header {
   width: 15em;
   height: 2em;
   text-align: center;
-  margin: 10% 27%;
+  margin: 10% 25%;
   color: white;
   text-transform: uppercase;
   font-size: 1em;
@@ -73,7 +73,9 @@ main {
 }
 
 section {
-  margin: 3% 5%;
+  width: 85%;
+  display: table;
+  margin: 3% 5% 3% 5%;
   padding: 3%;
 }
 
@@ -97,7 +99,6 @@ p {
 .div-attendees h3 {
   display: table-cell;
   width: 5em;
-  background-color: red;
   margin: 3%;
   font-size: 0.9em;
 }
@@ -115,6 +116,13 @@ p {
   font-size: 0.9em;
 }
 
+.div-checkbox {
+  margin-top: 3%;
+}
+.div-checkbox input {
+  padding-right: 2%;
+}
+
 .submit-attendee {
   width: 7em;
   padding: 2%;
@@ -125,6 +133,21 @@ h4 {
   display: flex;
   justify-content: flex-end;
   font-size: 0.7em;
+}
+
+.div-author {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 3%;
+}
+
+h4 {
+  font-size: 0.7em;
+}
+
+.fa-solid {
+  padding-left: 3%;
 }
 
 aside {
@@ -164,12 +187,8 @@ input {
   border-radius: 10em;
 }
 
-section {
-  color: white;
-  display: table;
-}
-
 footer {
+  margin-bottom: 2%;
   display: flex;
   justify-content: space-evenly;
 }
@@ -200,8 +219,13 @@ a {
   section {
     display: flex;
     flex-direction: column;
+    padding: 1%;
+    height: auto;
   }
   .button-close:hover {
+    cursor: pointer;
+  }
+  .fa-solid:hover {
     cursor: pointer;
   }
   aside {
@@ -209,16 +233,18 @@ a {
     padding: 2%;
     margin-top: 0em;
     width: 20%;
-    height: 91.5%;
+    height: 100%;
   }
   .button-close {
     margin: 0em 3em 0.3em 15em;
   }
   footer {
     margin-top: 1em;
+    font-family: "Heebo", sans-serif;
+    font-weight: 600;
   }
   a:hover {
-    color: rgb(25, 25, 25);
+    color: aqua;
     cursor: pointer;
   }
 }/*# sourceMappingURL=style.css.map */

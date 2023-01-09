@@ -45,9 +45,9 @@ export function updateEvent(event, id) {
         body: JSON.stringify(event)
     }).then((response) => response.json())
         .then((data) => {
-            alert('Success:', data);
+            alert("Success" + data);
         }).catch((error) => {
-            console.error('Error:', error);
+            alert('Error:', error);
         });
 }
 

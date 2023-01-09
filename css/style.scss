@@ -5,9 +5,9 @@
 @import './assets/_variables';
 // pour importer un élément: $exemplecouleur
 
-
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@600&display=swap');
 
 //-----------------------//
 
@@ -17,14 +17,16 @@
     text-decoration:none;
     list-style: none;
 }
+
+
 html{
     min-height: 100%;
 }
+
 body{
     background-image:url(/css/images/fond.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
     color:white;
     font-family: 'Heebo';
 }
@@ -47,7 +49,7 @@ header{
     width: 15em;
     height: 2em;
     text-align: center;
-    margin:10% 27%;
+    margin:10% 25%;
     color:white;
     text-transform:uppercase;
     font-size:1em;
@@ -62,6 +64,7 @@ header{
 
 //-------------------------MAIN-----------------------//
 
+
 main{
     @include flexdirect (flex, column);
     flex-wrap: wrap;
@@ -71,8 +74,11 @@ main{
   // height:34em;
 }
 
+
 section{
-    margin: 3% 5%;
+    width: 85%;
+    display:table;
+    margin: 3% 5% 3% 5%;
     padding:3%;
     @extend %glassmorphismbackground;
 }
@@ -95,7 +101,6 @@ p{//"Description Event"
     h3{
         display: table-cell;
         width:5em;
-        background-color: red;
         margin: 3%;
         font-size:0.9em;
     }
@@ -112,7 +117,12 @@ p{//"Description Event"
         font-size:0.9em;
     }
 }
-
+.div-checkbox{
+    margin-top: 3%;
+    input{
+        padding-right: 2%;
+    }
+}
 .submit-attendee{
     width:7em;
     padding: 2%;
@@ -123,9 +133,26 @@ h4{//"Event created by"
     @include flexcontent (flex, flex-end);
     font-size: 0.7em;
 }
+
+.div-author{//div qui reprend l'auteur+ les incônes
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin:3%;
+
+}
+
+h4{//"Event created by"
+    font-size: 0.7em;
+}
+
+.fa-solid{
+    padding-left: 3%;
+}
+
 //-----------------------ASIDE-------------------------//
 
-aside{
+aside{//le menu quand on click sur addEvent
     top:0;
     position:absolute;
     @include flexdirect (flex, column);
@@ -162,16 +189,10 @@ input{
     border-radius: 10em;
 
 }
-//-----------------------SECTION-------------------------//
-
-section{
-    color:white;
-    display:table;
-}
-
 //-----------------------FOOTER-------------------------//
 
 footer{
+    margin-bottom:2%;
     @include flexcontent (flex, space-evenly);
 }
 
@@ -206,14 +227,21 @@ a{
 
 main{
     @include flexdirect (flex, row);
-    //height:20em;
+
 }
 
 section{
     @include flexdirect (flex, column);
-    //width:30em;
+    padding: 1%;
+    height: auto;
 }
 .button-close{
+    &:hover{
+        cursor:pointer;
+    }
+}
+
+.fa-solid{
     &:hover{
         cursor:pointer;
     }
@@ -225,23 +253,25 @@ aside{
     padding:2%;
     margin-top:0em ;
     width: 20%;
-    height:91.5%;
-
+    height: 100%;
 }
-
 .button-close{
     margin:0em 3em 0.3em 15em;
 }
+
 //--------------FOOTER-----------------------//
+
 footer{
     margin-top: 1em;
+    font-family: 'Heebo',sans-serif;
+    font-weight : 600;
 }
 
 a{
     //color:$grey;
         &:hover{
-        color:$grey;
-         cursor:pointer;
+        color:aqua;
+        cursor:pointer;
 }
 }
 }
