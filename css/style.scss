@@ -140,7 +140,7 @@ h4{//"Event created by"
 
 //-----------------------ASIDE-------------------------//
 
-aside{
+aside{//le menu quand on click sur addEvent
     top:0;
     position:absolute;
     @include flexdirect (flex, column);
@@ -240,12 +240,11 @@ aside{
     padding:2%;
     margin-top:0em ;
     width: 20%;
-    height:91.5%;
-
 }
 .button-close{
     margin:0em 3em 0.3em 15em;
 }
+
 //--------------FOOTER-----------------------//
 
 footer{
