@@ -102,11 +102,6 @@ async function displayEvents() {
         //convert attendees list array to a map by event
         attendeesByEvent.set(event.name, Array.from(attendees.values()));
 
-        //create input name for new attendee
-        const nameInput = document.createElement("input");
-        nameInput.setAttribute("type", "text");
-        section.appendChild(nameInput); //append input to div that contains checkboxes
-
         //create submit button for new attendee
         const submitButton = document.createElement("button");
         submitButton.className = "submit-attendee"
@@ -128,7 +123,10 @@ async function displayEvents() {
         });
 
         displayAttendeeByEvent(attendeesByEvent, section); //display attendee list by event in section
-
+        //create input name for new attendee
+        const nameInput = document.createElement("input");
+        nameInput.setAttribute("type", "text");
+        section.appendChild(nameInput); //append input to div that contains checkboxes
         section.appendChild(divCheckbox); //append div checkbox to section(before the author)
 
         //create div for author edit and trash
