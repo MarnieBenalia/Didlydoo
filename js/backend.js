@@ -35,9 +35,9 @@ export function createAttendeeForEvent(attendee, eventId) {
 }
 
 //PATCH event basic infos
-export function updateEvent(event, id) {
+export async function updateEvent(event, id) {
     const BACKEND_URL = `http://localhost:3000/api/events/${id}/`
-    fetch(BACKEND_URL, {
+   await fetch(BACKEND_URL, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ export function updateEvent(event, id) {
         body: JSON.stringify(event)
     }).then((response) => response.json())
         .then((data) => {
-            alert("Success" + data);
+            console.log(data);
         }).catch((error) => {
             alert('Error:', error);
         });
