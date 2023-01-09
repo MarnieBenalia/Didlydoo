@@ -106,7 +106,6 @@ async function displayEvents() {
         const submitButton = document.createElement("button");
         submitButton.className = "submit-attendee"
         submitButton.innerText = "Submit";
-        divCheckbox.appendChild(submitButton); //append button to div checkbox
 
         //set listener for submit button
         submitButton.addEventListener("click", (e) => {
@@ -126,8 +125,9 @@ async function displayEvents() {
         //create input name for new attendee
         const nameInput = document.createElement("input");
         nameInput.setAttribute("type", "text");
-        section.appendChild(nameInput); //append input to div that contains checkboxes
+        divCheckbox.prepend(nameInput); //append input to div that contains checkboxes
         section.appendChild(divCheckbox); //append div checkbox to section(before the author)
+        section.appendChild(submitButton); //append button to div checkbox
 
         //create div for author edit and trash
         const divAuthor = document.createElement("div");
