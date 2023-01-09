@@ -4,7 +4,7 @@
 // pour importer un élément: @extend %lenomdetonplaceholder
 @import './assets/_variables';
 // pour importer un élément: $exemplecouleur
-@import "./assets/_keyframes";
+
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
@@ -20,19 +20,21 @@
   
 body{
     background-image: url(Images/fond.jpg);
-    background-color: rgb(61, 125, 199);
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: fixed;
+   //background-size: 300%;
+    height: 100%;
     color:white;
     font-family: 'Heebo';
 }
 
 //-------------------------HEADER-----------------------//
 
+header{
+    @include flexdirect (flex, column);
+}
+
 .title{
-    display: flex;
-    justify-content: flex-end;
+    @include flexcontent (flex, flex-end);
     padding:5%;
     font-size:2em;
     font-family: 'Quicksand', sans-serif;
@@ -40,12 +42,13 @@ body{
 }
 
 .buttonadd{
+    width: 15em;
+    height: 2em;
+    text-align: center;
     margin:10% 27%;
     color:white;
     text-transform:uppercase;
     font-size:1em;
-    border-radius: 16px;
-    padding:0.8em 4em;
     border-radius: 10em;
     @extend %glassmorphismbutton;
     &:focus{
@@ -56,6 +59,13 @@ body{
 }
 
 //-------------------------MAIN-----------------------//
+
+main{
+    color:black;
+    width:auto;
+   // height:15em;
+   height:34em;
+}
 
 section{
     margin: 3% 5%;
@@ -74,15 +84,13 @@ p{//"Description Event"
 }
 
 .div-attendees {
-    display: flex;
-    flex-direction: row;
+    @include flexdirect (flex, row);
     width: 100%;
     border: 1px solid rgba(255, 255, 255, 0.6);
 }
   
 .div-dates {
-    display: flex;
-    flex-direction: row;
+    @include flexdirect (flex, row);
     width: 100%;
 }
 
@@ -92,8 +100,7 @@ h3{
 }
 
 h4{//"Event created by"
-    display: flex;
-    justify-content: flex-end;
+    @include flexcontent (flex, flex-end);
     font-size: 0.7em;
 }
 //-----------------------ASIDE-------------------------//
@@ -101,8 +108,7 @@ h4{//"Event created by"
 aside{
     top:0;
     position:absolute;
-    flex-direction: column;
-    display: flex;
+    @include flexdirect (flex, column);
     margin-left:-100%;
     background-color:$grey;
     padding:5%;
@@ -125,6 +131,7 @@ input{
 .button-close{
     margin:0em 3em 0.3em 22.2em;
 }
+
 .button-submit{
     width: 10em;
     color:$grey;
@@ -138,10 +145,7 @@ input{
 //-----------------------FOOTER-------------------------//
 
 footer{
-    margin-top: 1em;
-    margin-bottom:1em;
-    display:flex;
-    justify-content: space-evenly;
+    @include flexcontent (flex, space-evenly);
 }
 
 a{
@@ -160,8 +164,9 @@ a{
 }
     
 .buttonadd{
+
     font-size:1.5em;
-    margin:3% 40%;
+    margin:3% 35%;
         &:hover{
             cursor: pointer;    
             background: rgba(255, 255, 255, 0.6);
@@ -173,14 +178,13 @@ a{
 //--------------MAIN-----------------------//
 
 main{
-    display: flex;
-    flex-direction:row;
+    @include flexdirect (flex, row);
+    height:20em;
 }
 
 section{
-    display: flex;
-    flex-direction: column;
-    width:30em;
+    @include flexdirect (flex, column);
+    //width:30em;
 }
 .button-close{
     &:hover{
@@ -194,15 +198,23 @@ aside{
     padding:2%;
     margin-top:0em ;
     width: 20%;
-    height:100%;
+    height:91.5%;
 
 }
+
+.button-close{
+    margin:0em 3em 0.3em 15em;
+}
 //--------------FOOTER-----------------------//
+footer{
+    margin-top: 1em;
+}
 
 a{
-&:hover{
-    color:$grey;
-    cursor:pointer;
+    //color:$grey;
+        &:hover{
+        color:$grey;
+         cursor:pointer;
 }
 }
 }
