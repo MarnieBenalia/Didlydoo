@@ -89,7 +89,9 @@ p {
   display: table;
 }
 .div-attendees h3 {
+  border: 1px solid rgba(255, 255, 255, 0.6);
   display: table-cell;
+  padding-left: 2%;
   width: 5em;
   margin: 3%;
   font-size: 0.9em;
@@ -102,6 +104,7 @@ p {
   display: table;
 }
 .div-dates h3 {
+  padding-left: 2%;
   display: table-cell;
   padding-bottom: 1em;
   margin: 3%;
@@ -196,7 +199,7 @@ a {
   }
   .buttonadd {
     font-size: 1.5em;
-    margin: 3% 35%;
+    margin: 3% 36%;
   }
   .buttonadd:hover {
     cursor: pointer;
