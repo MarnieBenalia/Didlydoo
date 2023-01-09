@@ -9,6 +9,7 @@ const buttonUpdate = document.createElement("button");
 
 export function editDataEvent(event) {
     ASIDE.style.display = "flex";
+    ASIDE.style.marginLeft = "0%";
     inputTitle.value = event.name;
     inputAuthor.value = event.author;
     inputDescription.value = event.description;
@@ -22,6 +23,7 @@ export function editDataEvent(event) {
     buttonUpdate.innerText = "Update"
     ASIDE.appendChild(buttonUpdate);
     buttonSubmit.style.display = "none"
+    
     let inputDateList = document.querySelectorAll(".input-date");
     inputDateList.forEach(inputDate => {
         inputDate.setAttribute("hidden", "true");
