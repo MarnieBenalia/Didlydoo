@@ -7,6 +7,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@600&display=swap');
 
 //-----------------------//
 
@@ -16,12 +17,15 @@
     text-decoration:none;
     list-style: none;
 }
-  
+
+html{
+    min-height: 100%;
+}
+
 body{
     background-image: url(/css/images/fond2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
     color:white;
     font-family: 'Heebo';
 }
@@ -59,12 +63,10 @@ header{
 
 //-------------------------MAIN-----------------------//
 
-main{
-    width:auto;
-}
-
 section{
-    margin: 3% 5%;
+    width: 85%;
+    display:table;
+    margin: 3% 5% 3% 5%;
     padding:3%;
     @extend %glassmorphismbackground;
 }
@@ -79,7 +81,7 @@ p{//"Description Event"
     padding-bottom:4%;
 }
 
-.div-attendees {//"Tableau pour afficher les noms et les dispositions"
+.div-attendees {
     @include flexdirect (flex, row);
     width: 100%;
     border: 1px solid rgba(255, 255, 255, 0.6);
@@ -92,7 +94,7 @@ p{//"Description Event"
     }
 }
   
-.div-dates {//"Tableau pour afficher les noms et les dispositions"
+.div-dates {
     @include flexdirect (flex, row);
     width: 100%;
     display:table;
@@ -119,6 +121,23 @@ h4{//"Event created by"
     @include flexcontent (flex, flex-end);
     font-size: 0.7em;
 }
+
+.div-author{//div qui reprend l'auteur+ les incônes
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin:3%;
+
+}
+
+h4{//"Event created by"
+    font-size: 0.7em;
+}
+
+.fa-solid{
+    padding-left: 3%;
+}
+
 //-----------------------ASIDE-------------------------//
 
 aside{
@@ -158,16 +177,10 @@ input{
     border-radius: 10em;
 
 }
-//-----------------------SECTION-------------------------//
-
-section{
-    color:white;
-    display:table;
-}
-
 //-----------------------FOOTER-------------------------//
 
 footer{
+    margin-bottom:2%;
     @include flexcontent (flex, space-evenly);
 }
 
@@ -214,6 +227,12 @@ section{
         cursor:pointer;
     }
 }
+
+.fa-solid{
+    &:hover{
+        cursor:pointer;
+    }
+}
 //--------------ASIDE-----------------------//
 
 aside{
@@ -231,13 +250,15 @@ aside{
 
 footer{
     margin-top: 1em;
+    font-family: 'Heebo',sans-serif;
+    font-weight : 600;
 }
 
 a{
     //color:$grey;
         &:hover{
-        color:$grey;
+        color:aqua;
         cursor:pointer;
-        }
+}
 }
 }

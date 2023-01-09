@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Heebo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@600&display=swap");
 .buttonadd {
   background: rgba(0, 0, 0, 0.6);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -21,11 +22,14 @@ section {
   list-style: none;
 }
 
+html {
+  min-height: 100%;
+}
+
 body {
   background-image: url(/css/images/fond2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
   color: white;
   font-family: "Heebo";
 }
@@ -60,12 +64,10 @@ header {
   color: rgb(25, 25, 25);
 }
 
-main {
-  width: auto;
-}
-
 section {
-  margin: 3% 5%;
+  width: 85%;
+  display: table;
+  margin: 3% 5% 3% 5%;
   padding: 3%;
 }
 
@@ -125,6 +127,21 @@ h4 {
   font-size: 0.7em;
 }
 
+.div-author {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 3%;
+}
+
+h4 {
+  font-size: 0.7em;
+}
+
+.fa-solid {
+  padding-left: 3%;
+}
+
 aside {
   top: 0;
   position: absolute;
@@ -162,12 +179,8 @@ input {
   border-radius: 10em;
 }
 
-section {
-  color: white;
-  display: table;
-}
-
 footer {
+  margin-bottom: 2%;
   display: flex;
   justify-content: space-evenly;
 }
@@ -204,6 +217,9 @@ a {
   .button-close:hover {
     cursor: pointer;
   }
+  .fa-solid:hover {
+    cursor: pointer;
+  }
   aside {
     top: 0;
     padding: 2%;
@@ -216,9 +232,11 @@ a {
   }
   footer {
     margin-top: 1em;
+    font-family: "Heebo", sans-serif;
+    font-weight: 600;
   }
   a:hover {
-    color: rgb(25, 25, 25);
+    color: aqua;
     cursor: pointer;
   }
 }/*# sourceMappingURL=style.css.map */
