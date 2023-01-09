@@ -67,7 +67,6 @@ header{
 
 main{
     @include flexdirect (flex, column);
-    color:black;
     width:auto;
     min-height: 50vh;
     //height:15em;
@@ -87,11 +86,12 @@ section{
 h2{//"Titre de l'Event"
     text-align: center;
     padding:1em;
+    
 }
 
 p{//"Description Event"
     text-align:center;
-    padding-bottom:4%;
+    padding-bottom:10%;
 }
 
 .div-attendees {
@@ -100,10 +100,13 @@ p{//"Description Event"
     border: 1px solid rgba(255, 255, 255, 0.6);
     display:table;
     h3{
+        border: 1px solid rgba(255, 255, 255, 0.6);
         display: table-cell;
+        padding-left: 2%;
         width:5em;
         margin: 3%;
         font-size:0.9em;
+        
     }
 }
   
@@ -112,6 +115,7 @@ p{//"Description Event"
     width: 100%;
     display:table;
     h3{
+        padding-left: 2%;
         display: table-cell;
         padding-bottom: 1em;
         margin: 3%;
@@ -119,15 +123,31 @@ p{//"Description Event"
     }
 }
 .div-checkbox{
-    margin-top: 3%;
-    input{
-        padding-right: 2%;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top:1.5em;
+    text-align: center;
+    margin-left: 37%;;
 }
+
+.labelNo{
+    margin-right: 20%;
+}
+
+.inputName{
+    margin-top: 1em;
+    width:10em;
+    margin-right:5%;
+}
+
 .submit-attendee{
-    width:7em;
+    margin-left:3%;
+    width: 10em;
     padding: 2%;
     border-radius: 10em;
+
 }
 
 h4{//"Event created by"
@@ -191,10 +211,7 @@ input{
     border-radius: 10em;
 
 }
-input[type="date"]::-webkit-calendar-picker-indicator {
 
-    filter: invert(1);
-  }
 //-----------------------FOOTER-------------------------//
 
 footer{
@@ -221,7 +238,7 @@ a{
 .buttonadd{
 
     font-size:1.5em;
-    margin:3% 35%;
+    margin:3% 36%;
         &:hover{
             cursor: pointer;    
             background: rgba(255, 255, 255, 0.6);
@@ -233,7 +250,7 @@ a{
 //--------------MAIN-----------------------//
 
 main{
-    @include flexdirect (flex, row);
+   @include flexdirect (flex, row);
 
 }
 
@@ -242,6 +259,7 @@ section{
     padding: 1%;
     height: auto;
 }
+
 .button-close{
     &:hover{
         cursor:pointer;
@@ -252,6 +270,22 @@ section{
     &:hover{
         cursor:pointer;
     }
+}
+
+.div-checkbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.inputName{
+    width:10em;
+}
+
+.div-inputsubmit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 //--------------ASIDE-----------------------//
 
@@ -275,7 +309,6 @@ footer{
 }
 
 a{
-    //color:$grey;
         &:hover{
         color:aqua;
         cursor:pointer;

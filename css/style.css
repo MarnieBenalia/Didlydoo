@@ -87,7 +87,7 @@ h2 {
 
 p {
   text-align: center;
-  padding-bottom: 4%;
+  padding-bottom: 10%;
 }
 
 .div-attendees {
@@ -98,7 +98,9 @@ p {
   display: table;
 }
 .div-attendees h3 {
+  border: 1px solid rgba(255, 255, 255, 0.6);
   display: table-cell;
+  padding-left: 2%;
   width: 5em;
   margin: 3%;
   font-size: 0.9em;
@@ -111,6 +113,7 @@ p {
   display: table;
 }
 .div-dates h3 {
+  padding-left: 2%;
   display: table-cell;
   padding-bottom: 1em;
   margin: 3%;
@@ -118,14 +121,28 @@ p {
 }
 
 .div-checkbox {
-  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 1.5em;
+  text-align: center;
+  margin-left: 37%;
 }
-.div-checkbox input {
-  padding-right: 2%;
+
+.labelNo {
+  margin-right: 20%;
+}
+
+.inputName {
+  margin-top: 1em;
+  width: 10em;
+  margin-right: 5%;
 }
 
 .submit-attendee {
-  width: 7em;
+  margin-left: 3%;
+  width: 10em;
   padding: 2%;
   border-radius: 10em;
 }
@@ -209,7 +226,7 @@ a {
   }
   .buttonadd {
     font-size: 1.5em;
-    margin: 3% 35%;
+    margin: 3% 36%;
   }
   .buttonadd:hover {
     cursor: pointer;
@@ -232,6 +249,19 @@ a {
   }
   .fa-solid:hover {
     cursor: pointer;
+  }
+  .div-checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .inputName {
+    width: 10em;
+  }
+  .div-inputsubmit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   aside {
     top: 0;
