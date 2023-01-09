@@ -1,35 +1,31 @@
-
 [
   {
-    "id": "ae9357674749",
-    "name": "Anniversaire",
-    "author": "Marnie",
-    "description": "J'aime pas mon anniversaire",
+    "id": "8485ce51f8f5",
+    "name": "sdfdf",
+    "author": "sdfsf",
+    "description": "dsfsdf",
     "dates": [
-      "2023-01-26",
-      "2023-01-27",
-      "2023-01-28"
+      "2023-01-19",
+      "2023-01-25",
+      "2023-01-18"
     ],
-    "created_at": "2023-01-09T10:49:54.608Z",
-    "num_modification": 2,
-    "last_modification": "2023-01-09T11:54:23.003Z",
-    "attendees": []
-  },
-  
-  {
-    "id": "c7e421946e9d",
-    "name": "Anniversaire",
-    "author": "Marnie",
-    "description": "J'aime pas mon anniversaire",
-    "dates": [
-      "2023-01-26",
-      "2023-01-27",
-      "2023-01-28"
-    ],
-    "created_at": "2023-01-09T10:48:43.776Z",
+    "created_at": "2023-01-09T13:12:00.911Z",
     "num_modification": 0,
-    "last_modification": "2023-01-09T10:48:43.776Z",
+    "last_modification": "2023-01-09T13:12:00.911Z",
+    "attendees": []
+  },  {
+    "id": "8485ce51f8f5",
+    "name": "sdfdf",
+    "author": "sdfsf",
+    "description": "dsfsdf",
+    "dates": [
+      "2023-01-19",
+      "2023-01-25",
+      "2023-01-18"
+    ],
+    "created_at": "2023-01-09T13:12:00.911Z",
+    "num_modification": 0,
+    "last_modification": "2023-01-09T13:12:00.911Z",
     "attendees": []
   }
 ]
-

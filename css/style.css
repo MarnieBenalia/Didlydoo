@@ -70,6 +70,7 @@ main {
   flex-wrap: wrap;
   color: black;
   width: auto;
+  min-height: 50vh;
 }
 
 section {
@@ -77,6 +78,7 @@ section {
   display: table;
   margin: 3% 5% 3% 5%;
   padding: 3%;
+  color: white;
 }
 
 h2 {

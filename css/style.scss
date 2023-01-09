@@ -70,6 +70,7 @@ main{
     flex-wrap: wrap;
     color:black;
     width:auto;
+    min-height: 50vh;
     //height:15em;
   // height:34em;
 }
@@ -80,6 +81,7 @@ section{
     display:table;
     margin: 3% 5% 3% 5%;
     padding:3%;
+    color: white;
     @extend %glassmorphismbackground;
 }
 
@@ -194,6 +196,7 @@ input{
 footer{
     margin-bottom:2%;
     @include flexcontent (flex, space-evenly);
+    //height: 2em;
 }
 
 a{
