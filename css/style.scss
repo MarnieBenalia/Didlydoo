@@ -1,317 +1,310 @@
-@import './assets/_mixins';
+@import "./assets/_mixins";
 // pour importer un élément: @include absolute-el()
-@import './assets/_placeholders'; 
+@import "./assets/_placeholders";
 // pour importer un élément: @extend %lenomdetonplaceholder
-@import './assets/_variables';
+@import "./assets/_variables";
 // pour importer un élément: $exemplecouleur
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Heebo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@600&display=swap");
 
 //-----------------------//
 
-*{
-    margin: 0;
-    padding: 0;
-    text-decoration:none;
-    list-style: none;
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
 }
 
-
-html{
-    min-height: 100%;
+html {
+  min-height: 100%;
 }
 
-body{
-    background-image:url(/css/images/fond.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    color:white;
-    font-family: 'Heebo';
+body {
+  background-image: url(/css/images/fond.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-family: "Heebo";
 }
 
 //-------------------------HEADER-----------------------//
 
-header{
-    @include flexdirect (flex, column);
+header {
+  @include flexdirect(flex, column);
 }
 
-.title{
-    @include flexcontent (flex, flex-end);
-    padding:5%;
-    font-size:2em;
-    font-family: 'Quicksand', sans-serif;
-    text-transform:uppercase;
+.title {
+  @include flexcontent(flex, flex-end);
+  padding: 5%;
+  font-size: 2em;
+  font-family: "Quicksand", sans-serif;
+  text-transform: uppercase;
 }
 
-.buttonadd{
-    width: 15em;
-    height: 2em;
-    text-align: center;
-    margin:10% 25%;
-    color:white;
-    text-transform:uppercase;
-    font-size:1em;
-    border-radius: 10em;
-    @extend %glassmorphismbutton;
-    &:focus{
-        background: rgba(255, 255, 255, 0.6);
-        border: 1px solid rgba(255, 255, 255, 0.6);
-        color:$grey;
-    }
+.buttonadd {
+  width: 15em;
+  height: 2em;
+  text-align: center;
+  margin: 10% 25%;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1em;
+  border-radius: 10em;
+  @extend %glassmorphismbutton;
+  &:focus {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: $grey;
+  }
 }
 
 //-------------------------MAIN-----------------------//
 
-
-main{
-    @include flexdirect (flex, column);
-    width:auto;
-    min-height: 50vh;
-    //height:15em;
+main {
+  @include flexdirect(flex, column);
+  width: auto;
+  min-height: 50vh;
+  //height:15em;
   // height:34em;
 }
 
-
-section{
-    width: 85%;
-    display:table;
-    margin: 3% 5% 3% 5%;
-    padding:3%;
-    color: white;
-    @extend %glassmorphismbackground;
+section {
+  width: 85%;
+  display: table;
+  margin: 3% 5% 3% 5%;
+  padding: 3%;
+  color: white;
+  @extend %glassmorphismbackground;
 }
 
-h2{//"Titre de l'Event"
-    text-align: center;
-    padding:1em;
-    
+h2 {
+  //"Titre de l'Event"
+  text-align: center;
+  padding: 1em;
 }
 
-p{//"Description Event"
-    text-align:center;
-    padding-bottom:10%;
+p {
+  //"Description Event"
+  text-align: center;
+  padding-bottom: 10%;
 }
 
 .div-attendees {
-    @include flexdirect (flex, row);
-    width: 100%;
+  @include flexdirect(flex, row);
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  display: table;
+  h3 {
     border: 1px solid rgba(255, 255, 255, 0.6);
-    display:table;
-    h3{
-        border: 1px solid rgba(255, 255, 255, 0.6);
-        display: table-cell;
-        padding-left: 2%;
-        width:5em;
-        margin: 3%;
-        font-size:0.9em;
-        
-    }
+    display: table-cell;
+    padding-left: 2%;
+    width: 5em;
+    margin: 3%;
+    font-size: 0.9em;
+  }
 }
-  
+
 .div-dates {
-    @include flexdirect (flex, row);
-    width: 100%;
-    display:table;
-    h3{
-        padding-left: 2%;
-        display: table-cell;
-        padding-bottom: 1em;
-        margin: 3%;
-        font-size:0.9em;
-    }
+  @include flexdirect(flex, row);
+  width: 100%;
+  display: table;
+  h3 {
+    padding-left: 2%;
+    display: table-cell;
+    padding-bottom: 1em;
+    margin: 3%;
+    font-size: 0.9em;
+  }
 }
-.div-checkbox{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin-top:1.5em;
-    text-align: center;
-    margin-left: 37%;;
-}
-
-.labelNo{
-    margin-right: 20%;
+.div-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 1.5em;
+  text-align: center;
+  margin-left: 37%;
 }
 
-.inputName{
-    margin-top: 1em;
-    width:10em;
-    margin-right:5%;
+.labelNo {
+  margin-right: 20%;
 }
 
-.submit-attendee{
-    margin-left:3%;
-    width: 10em;
-    padding: 2%;
-    border-radius: 10em;
-
+.inputName {
+  margin-top: 1em;
+  width: 10em;
+  margin-right: 5%;
 }
 
-h4{//"Event created by"
-    @include flexcontent (flex, flex-end);
-    font-size: 0.7em;
+.submit-attendee {
+  margin-left: 3%;
+  width: 10em;
+  padding: 2%;
+  border-radius: 10em;
 }
 
-.div-author{//div qui reprend l'auteur+ les incônes
-    display:flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin:3%;
-
+h4 {
+  //"Event created by"
+  @include flexcontent(flex, flex-end);
+  font-size: 0.7em;
 }
 
-h4{//"Event created by"
-    font-size: 0.7em;
+.div-author {
+  //div qui reprend l'auteur+ les incônes
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 3%;
 }
 
-.fa-solid{
-    padding-left: 3%;
+h4 {
+  //"Event created by"
+  font-size: 0.7em;
+}
+
+.fa-solid {
+  padding-left: 3%;
 }
 
 //-----------------------ASIDE-------------------------//
 
-aside{//le menu quand on click sur addEvent
-    top:0;
-    position:absolute;
-    @include flexdirect (flex, column);
-    margin-left:-115%;
-    background-color:$grey;
-    padding:5%;
-    margin-top:13em ;
-    width: 24rem;
-    height:auto;
-    transition: all 0.5s;
+aside {
+  //le menu quand on click sur addEvent
+  top: 0;
+  position: absolute;
+  @include flexdirect(flex, column);
+  margin-left: -115%;
+  background-color: $grey;
+  padding: 5%;
+  margin-top: 13em;
+  width: 24rem;
+  height: auto;
+  transition: all 0.5s;
 }
 
-input{
-    background-color: $grey;
-    color: white;
-    border: 0.1px solid rgb(68, 68, 68);
-    padding:0.3em;
-    margin-bottom: 1.3em;
-    border-radius: 0.1em;
-
+input {
+  background-color: $grey;
+  color: white;
+  border: 0.1px solid rgb(68, 68, 68);
+  padding: 0.3em;
+  margin-bottom: 1.3em;
+  border-radius: 0.1em;
 }
 
-
-.button-close{
-    margin:0em 3em 0.3em 22.2em;
+.button-close {
+  margin: 0em 3em 0.3em 22.2em;
 }
 
-.button-submit{
-    width: 10em;
-    color:$grey;
-    text-transform:uppercase;
-    font-size:1em;
-    border-radius: 16px;
-    padding:0.5em 2em;
-    border-radius: 10em;
-
+.button-submit {
+  width: 10em;
+  color: $grey;
+  text-transform: uppercase;
+  font-size: 1em;
+  border-radius: 16px;
+  padding: 0.5em 2em;
+  border-radius: 10em;
 }
 
 //-----------------------FOOTER-------------------------//
 
-footer{
-    margin-bottom:2%;
-    @include flexcontent (flex, space-evenly);
-    //height: 2em;
+footer {
+  margin-bottom: 2%;
+  @include flexcontent(flex, space-evenly);
+  //height: 2em;
 }
 
-a{
-    color:white;
+a {
+  color: white;
 }
 
 //-----------------------MEDIA QUERIES-------------------------//
 
 @media screen and (min-width: 1023px) {
+  //--------------HEADER-----------------------//
 
-//--------------HEADER-----------------------//
+  .title {
+    font-size: 3em;
+    padding: 2%;
+  }
 
-.title{
-        font-size:3em;
-        padding:2%;
-}
-    
-.buttonadd{
+  .buttonadd {
+    font-size: 1.5em;
+    margin: 3% 36%;
+    &:hover {
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      color: $grey;
+    }
+  }
 
-    font-size:1.5em;
-    margin:3% 36%;
-        &:hover{
-            cursor: pointer;    
-            background: rgba(255, 255, 255, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            color:$grey;
-        }
-}
+  //--------------MAIN-----------------------//
 
-//--------------MAIN-----------------------//
+  main {
+    @include flexdirect(flex, row);
+  }
 
-main{
-   @include flexdirect (flex, row);
-
-}
-
-section{
-    @include flexdirect (flex, column);
+  section {
+    @include flexdirect(flex, column);
     padding: 1%;
     height: auto;
-}
+  }
 
-.button-close{
-    &:hover{
-        cursor:pointer;
+  .button-close {
+    &:hover {
+      cursor: pointer;
     }
-}
+  }
 
-.fa-solid{
-    &:hover{
-        cursor:pointer;
+  .fa-solid {
+    &:hover {
+      cursor: pointer;
     }
-}
+  }
 
-.div-checkbox{
+  .div-checkbox {
     display: flex;
     flex-direction: row;
     justify-content: center;
-}
+  }
 
-.inputName{
-    width:10em;
-}
+  .inputName {
+    width: 10em;
+  }
 
-.div-inputsubmit{
+  .div-inputsubmit {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-//--------------ASIDE-----------------------//
+  }
+  //--------------ASIDE-----------------------//
 
-aside{
-    top:0;
-    padding:2%;
-    margin-top:0em ;
+  aside {
+    top: 0;
+    padding: 2%;
+    margin-top: 0em;
     width: 20%;
     height: 100%;
-}
-.button-close{
-    margin:0em 3em 0.3em 15em;
-}
+  }
+  .button-close {
+    margin: 0em 3em 0.3em 15em;
+  }
 
-//--------------FOOTER-----------------------//
+  //--------------FOOTER-----------------------//
 
-footer{
+  footer {
     margin-top: 1em;
-    font-family: 'Heebo',sans-serif;
-    font-weight : 600;
-}
+    font-family: "Heebo", sans-serif;
+    font-weight: 600;
+  }
 
-a{
-        &:hover{
-        color:aqua;
-        cursor:pointer;
-}
-}
+  a {
+    &:hover {
+      color: aqua;
+      cursor: pointer;
+    }
+  }
 }
