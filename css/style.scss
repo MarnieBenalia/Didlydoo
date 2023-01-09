@@ -18,12 +18,13 @@
     list-style: none;
 }
 
+
 html{
     min-height: 100%;
 }
 
 body{
-    background-image: url(/css/images/fond2.jpg);
+    background-image:url(/css/images/fond.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     color:white;
@@ -62,6 +63,17 @@ header{
 }
 
 //-------------------------MAIN-----------------------//
+
+
+main{
+    @include flexdirect (flex, column);
+    flex-wrap: wrap;
+    color:black;
+    width:auto;
+    //height:15em;
+  // height:34em;
+}
+
 
 section{
     width: 85%;
@@ -218,6 +230,7 @@ a{
 
 main{
     @include flexdirect (flex, row);
+
 }
 
 section{
