@@ -67,8 +67,6 @@ header{
 
 main{
     @include flexdirect (flex, column);
-    flex-wrap: wrap;
-    color:black;
     width:auto;
     //height:15em;
   // height:34em;
@@ -86,11 +84,12 @@ section{
 h2{//"Titre de l'Event"
     text-align: center;
     padding:1em;
+    
 }
 
 p{//"Description Event"
     text-align:center;
-    padding-bottom:4%;
+    padding-bottom:10%;
 }
 
 .div-attendees {
@@ -105,6 +104,7 @@ p{//"Description Event"
         width:5em;
         margin: 3%;
         font-size:0.9em;
+        
     }
 }
   
@@ -121,15 +121,26 @@ p{//"Description Event"
     }
 }
 .div-checkbox{
-    margin-top: 3%;
+    display: flex;
+    flex-direction: row;
+    margin: 3% 1% ;
+    margin-top:1.5em;
     input{
-        padding-right: 2%;
+        margin-left: 2%;
     }
 }
+
+.inputName{
+    width:10em;
+    margin-right:5%;
+}
+
 .submit-attendee{
-    width:7em;
+    margin-left:3%;
+    width: 10em;
     padding: 2%;
     border-radius: 10em;
+
 }
 
 h4{//"Event created by"
@@ -159,7 +170,7 @@ aside{//le menu quand on click sur addEvent
     top:0;
     position:absolute;
     @include flexdirect (flex, column);
-    margin-left:-100%;
+    margin-left:-115%;
     background-color:$grey;
     padding:5%;
     margin-top:13em ;
@@ -229,7 +240,7 @@ a{
 //--------------MAIN-----------------------//
 
 main{
-    @include flexdirect (flex, row);
+   @include flexdirect (flex, row);
 
 }
 
@@ -248,6 +259,17 @@ section{
     &:hover{
         cursor:pointer;
     }
+}
+
+.div-checkbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.inputName{
+    width:20em;
+
 }
 //--------------ASIDE-----------------------//
 
@@ -271,7 +293,6 @@ footer{
 }
 
 a{
-    //color:$grey;
         &:hover{
         color:aqua;
         cursor:pointer;

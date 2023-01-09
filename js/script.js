@@ -124,6 +124,7 @@ async function displayEvents() {
         displayAttendeeByEvent(attendeesByEvent, section); //display attendee list by event in section
         //create input name for new attendee
         const nameInput = document.createElement("input");
+        nameInput.className="inputName";
         nameInput.setAttribute("type", "text");
         divCheckbox.prepend(nameInput); //append input to div that contains checkboxes
         section.appendChild(divCheckbox); //append div checkbox to section(before the author)

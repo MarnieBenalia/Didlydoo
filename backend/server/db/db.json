@@ -1,38 +1,41 @@
-
 [
   {
-    "id": "32e710b06a4a",
+    "id": "01d067563600",
     "name": "Anniversaire",
     "author": "Marnie",
     "description": "J'aime pas mon anniversaire",
     "dates": [
-      "2023-01-26",
-      "2023-01-27",
-      "2023-01-28"
+      "2023-01-24",
+      "2023-01-25",
+      "2023-01-25"
     ],
-    "created_at": "2023-01-09T11:38:17.489Z",
+    "created_at": "2023-01-09T13:55:56.285Z",
     "num_modification": 0,
-    "last_modification": "2023-01-09T11:38:17.489Z",
-    "created_at": "2023-01-09T10:49:54.608Z",
-    "num_modification": 2,
-    "last_modification": "2023-01-09T11:54:23.003Z",
+    "last_modification": "2023-01-09T13:55:56.285Z",
     "attendees": []
   },
-  
   {
-    "id": "c7e421946e9d",
+    "id": "a6773a749102",
     "name": "Anniversaire",
     "author": "Marnie",
     "description": "J'aime pas mon anniversaire",
     "dates": [
-      "2023-01-26",
-      "2023-01-27",
-      "2023-01-28"
+      "2023-01-24",
+      "2023-01-25",
+      "2023-01-25"
     ],
-    "created_at": "2023-01-09T10:48:43.776Z",
+    "created_at": "2023-01-09T13:51:12.334Z",
     "num_modification": 0,
-    "last_modification": "2023-01-09T10:48:43.776Z",
-    "attendees": []
+    "last_modification": "2023-01-09T13:51:12.334Z",
+    "attendees": [
+      {
+        "name": "jj",
+        "dates": []
+      },
+      {
+        "name": "jjk",
+        "dates": []
+      }
+    ]
   }
 ]
-
