@@ -1,3 +1,4 @@
+
 [
   {
     "id": "ae9357674749",
@@ -29,20 +30,6 @@
     "num_modification": 0,
     "last_modification": "2023-01-09T10:48:43.776Z",
     "attendees": []
-  },
-  {
-    "id": "5a48c9a594b9",
-    "name": "Anniversaire",
-    "author": "Marnie",
-    "description": "J'aime pas mon anniversaire",
-    "dates": [
-      "2023-01-26",
-      "2023-01-27",
-      "2023-01-28"
-    ],
-    "created_at": "2023-01-09T10:48:31.573Z",
-    "num_modification": 0,
-    "last_modification": "2023-01-09T10:48:31.573Z",
-    "attendees": []
   }
 ]
+
