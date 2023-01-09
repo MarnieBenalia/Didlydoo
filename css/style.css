@@ -48,7 +48,7 @@ header {
   width: 15em;
   height: 2em;
   text-align: center;
-  margin: 10% 27%;
+  margin: 10% 25%;
   color: white;
   text-transform: uppercase;
   font-size: 1em;
@@ -61,7 +61,6 @@ header {
 }
 
 main {
-  color: black;
   width: auto;
 }
 
@@ -90,7 +89,6 @@ p {
 .div-attendees h3 {
   display: table-cell;
   width: 5em;
-  background-color: red;
   margin: 3%;
   font-size: 0.9em;
 }
@@ -106,6 +104,13 @@ p {
   padding-bottom: 1em;
   margin: 3%;
   font-size: 0.9em;
+}
+
+.div-checkbox {
+  margin-top: 3%;
+}
+.div-checkbox input {
+  padding-right: 2%;
 }
 
 .submit-attendee {
@@ -189,11 +194,12 @@ a {
   main {
     display: flex;
     flex-direction: row;
-    height: 20em;
   }
   section {
     display: flex;
     flex-direction: column;
+    padding: 1%;
+    height: auto;
   }
   .button-close:hover {
     cursor: pointer;

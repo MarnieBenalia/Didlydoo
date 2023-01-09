@@ -63,6 +63,23 @@
             "available": false
           }
         ]
+      },
+      {
+        "name": "Aurelien",
+        "dates": [
+          {
+            "date": "2023-01-12",
+            "available": true
+          },
+          {
+            "date": "2023-01-26",
+            "available": true
+          },
+          {
+            "date": "2023-01-23",
+            "available": false
+          }
+        ]
       }
     ]
   },

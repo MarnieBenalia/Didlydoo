@@ -5,7 +5,6 @@
 @import './assets/_variables';
 // pour importer un élément: $exemplecouleur
 
-
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
 
@@ -45,7 +44,7 @@ header{
     width: 15em;
     height: 2em;
     text-align: center;
-    margin:10% 27%;
+    margin:10% 25%;
     color:white;
     text-transform:uppercase;
     font-size:1em;
@@ -61,10 +60,7 @@ header{
 //-------------------------MAIN-----------------------//
 
 main{
-    color:black;
     width:auto;
-   // height:15em;
-  // height:34em;
 }
 
 section{
@@ -91,7 +87,6 @@ p{//"Description Event"
     h3{
         display: table-cell;
         width:5em;
-        background-color: red;
         margin: 3%;
         font-size:0.9em;
     }
@@ -108,7 +103,12 @@ p{//"Description Event"
         font-size:0.9em;
     }
 }
-
+.div-checkbox{
+    margin-top: 3%;
+    input{
+        padding-right: 2%;
+    }
+}
 .submit-attendee{
     width:7em;
     padding: 2%;
@@ -202,12 +202,12 @@ a{
 
 main{
     @include flexdirect (flex, row);
-    height:20em;
 }
 
 section{
     @include flexdirect (flex, column);
-    //width:30em;
+    padding: 1%;
+    height: auto;
 }
 .button-close{
     &:hover{
@@ -224,11 +224,11 @@ aside{
     height:91.5%;
 
 }
-
 .button-close{
     margin:0em 3em 0.3em 15em;
 }
 //--------------FOOTER-----------------------//
+
 footer{
     margin-top: 1em;
 }
@@ -237,7 +237,7 @@ a{
     //color:$grey;
         &:hover{
         color:$grey;
-         cursor:pointer;
+        cursor:pointer;
 }
 }
 }
