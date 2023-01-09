@@ -19,8 +19,9 @@
 }
   
 body{
-    background-image: url(Images/fond.jpg);
-    background-repeat: no-repeat;
+    background-image: url(images/fond.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;    
    //background-size: 300%;
     height: 100%;
     color:white;
@@ -61,10 +62,12 @@ header{
 //-------------------------MAIN-----------------------//
 
 main{
+    @include flexdirect (flex, column);
+    flex-wrap: wrap;
     color:black;
     width:auto;
    // height:15em;
-   height:34em;
+   // height:34em;
 }
 
 section{

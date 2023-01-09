@@ -22,7 +22,8 @@ section {
 }
 
 body {
-  background-image: url(Images/fond.jpg);
+  background-image: url(images/fond.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
   color: white;
@@ -60,9 +61,11 @@ header {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   color: black;
   width: auto;
-  height: 34em;
 }
 
 section {
