@@ -67,7 +67,6 @@ header{
 
 main{
     @include flexdirect (flex, column);
-    flex-wrap: wrap;
     color:black;
     width:auto;
     min-height: 50vh;
@@ -158,7 +157,7 @@ aside{//le menu quand on click sur addEvent
     top:0;
     position:absolute;
     @include flexdirect (flex, column);
-    margin-left:-100%;
+    margin-left:-115%;
     background-color:$grey;
     padding:5%;
     margin-top:13em ;
@@ -191,6 +190,10 @@ input{
     border-radius: 10em;
 
 }
+input[type="date"]::-webkit-calendar-picker-indicator {
+
+    filter: invert(1);
+  }
 //-----------------------FOOTER-------------------------//
 
 footer{

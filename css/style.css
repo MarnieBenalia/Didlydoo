@@ -67,7 +67,6 @@ header {
 main {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   color: black;
   width: auto;
   min-height: 50vh;
@@ -157,7 +156,7 @@ aside {
   position: absolute;
   display: flex;
   flex-direction: column;
-  margin-left: -100%;
+  margin-left: -115%;
   background-color: rgb(25, 25, 25);
   padding: 5%;
   margin-top: 13em;
@@ -187,6 +186,10 @@ input {
   border-radius: 16px;
   padding: 0.5em 2em;
   border-radius: 10em;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
 }
 
 footer {
