@@ -19,10 +19,9 @@
 }
   
 body{
-    background-image: url(images/fond.jpg);
+    background-image: url(/css/images/fond2.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
-    background-repeat: no-repeat;    
-   //background-size: 300%;
     height: 100%;
     color:white;
     font-family: 'Heebo';
@@ -67,7 +66,7 @@ main{
     color:black;
     width:auto;
    // height:15em;
-   // height:34em;
+  // height:34em;
 }
 
 section{
@@ -90,16 +89,32 @@ p{//"Description Event"
     @include flexdirect (flex, row);
     width: 100%;
     border: 1px solid rgba(255, 255, 255, 0.6);
+    display:table;
+    h3{
+        display: table-cell;
+        width:5em;
+        background-color: red;
+        margin: 3%;
+        font-size:0.9em;
+    }
 }
   
 .div-dates {
     @include flexdirect (flex, row);
     width: 100%;
+    display:table;
+    h3{
+        display: table-cell;
+        padding-bottom: 1em;
+        margin: 3%;
+        font-size:0.9em;
+    }
 }
 
-h3{
-    margin: 3%;
-    font-size:0.9em;
+.submit-attendee{
+    width:7em;
+    padding: 2%;
+    border-radius: 10em;
 }
 
 h4{//"Event created by"
@@ -145,6 +160,13 @@ input{
     border-radius: 10em;
 
 }
+//-----------------------SECTION-------------------------//
+
+section{
+    color:white;
+    display:table;
+}
+
 //-----------------------FOOTER-------------------------//
 
 footer{

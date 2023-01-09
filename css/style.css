@@ -22,9 +22,9 @@ section {
 }
 
 body {
-  background-image: url(images/fond.jpg);
-  background-size: cover;
+  background-image: url(/css/images/fond2.jpg);
   background-repeat: no-repeat;
+  background-size: cover;
   height: 100%;
   color: white;
   font-family: "Heebo";
@@ -88,17 +88,33 @@ p {
   flex-direction: row;
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.6);
+  display: table;
+}
+.div-attendees h3 {
+  display: table-cell;
+  width: 5em;
+  background-color: red;
+  margin: 3%;
+  font-size: 0.9em;
 }
 
 .div-dates {
   display: flex;
   flex-direction: row;
   width: 100%;
+  display: table;
 }
-
-h3 {
+.div-dates h3 {
+  display: table-cell;
+  padding-bottom: 1em;
   margin: 3%;
   font-size: 0.9em;
+}
+
+.submit-attendee {
+  width: 7em;
+  padding: 2%;
+  border-radius: 10em;
 }
 
 h4 {
@@ -142,6 +158,11 @@ input {
   border-radius: 16px;
   padding: 0.5em 2em;
   border-radius: 10em;
+}
+
+section {
+  color: white;
+  display: table;
 }
 
 footer {
