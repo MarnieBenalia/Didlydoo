@@ -14,7 +14,6 @@ export function editDataEvent(event) {
     inputAuthor.value = event.author;
     inputDescription.value = event.description;
 
-
     buttonUpdate.innerText = "Update"
     ASIDE.appendChild(buttonUpdate);
     buttonSubmit.style.display = "none"
