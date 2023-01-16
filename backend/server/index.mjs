@@ -26,4 +26,4 @@ app.get('/', (req, res, next) => res.send({
 app.use('/api', eventsRoute)
 app.use('/api', attendanceRoute)
 
-app.listen(PORT, () => console.log(`Server started: http://localhost:${PORT}/`))
+app.listen(PORT, () => console.log(`Server started: https://localhost:${PORT}/`))
