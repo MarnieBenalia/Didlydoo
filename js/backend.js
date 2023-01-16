@@ -1,6 +1,6 @@
 //GET list of all events
 export async function fetchEvents() {
-    const BACKEND_URL = "http://localhost:3000/api/events/"
+    const BACKEND_URL = "https://localhost:3000/api/events/"
     const request = await fetch(BACKEND_URL);
     const response = await request.json();
     return response;
@@ -8,7 +8,7 @@ export async function fetchEvents() {
 
 //POST new event
 export function createEvent(newEvent) {
-    const BACKEND_URL = "http://localhost:3000/api/events/"
+    const BACKEND_URL = "https://localhost:3000/api/events/"
     fetch(BACKEND_URL, {
         method: 'POST',
         headers: {
@@ -22,7 +22,7 @@ export function createEvent(newEvent) {
 
 //POST new attendee for event
 export function createAttendeeForEvent(attendee, eventId) {
-    const BACKEND_URL = `http://localhost:3000/api/events/${eventId}/attend`
+    const BACKEND_URL = `https://localhost:3000/api/events/${eventId}/attend`
     fetch(BACKEND_URL, {
         method: 'POST',
         headers: {
@@ -36,7 +36,7 @@ export function createAttendeeForEvent(attendee, eventId) {
 
 //PATCH event basic infos
 export async function updateEvent(event, id) {
-    const BACKEND_URL = `http://localhost:3000/api/events/${id}/`
+    const BACKEND_URL = `https://localhost:3000/api/events/${id}/`
    await fetch(BACKEND_URL, {
         method: 'PATCH',
         headers: {
@@ -53,7 +53,7 @@ export async function updateEvent(event, id) {
 
 //DELETE event
 export function deleteEvent(id) {
-    const BACKEND_URL = `http://localhost:3000/api/events/${id}/`
+    const BACKEND_URL = `https://localhost:3000/api/events/${id}/`
     fetch(BACKEND_URL, {
         method: 'DELETE'
     }).catch((error) => {
